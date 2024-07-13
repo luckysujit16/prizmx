@@ -1,15 +1,40 @@
 .header {
-  padding-left: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
   text-align: center;
+  min-height: 50px;
+  margin-top: 5px;
 }
 
 .logo {
   width: 150px; /* Adjust the size as needed */
+  padding: 0.5rem;
   height: auto;
   margin-right: 10px;
 }
 
-.navbar {
-  display: flex !important;
-  flex-basis: auto;
+.menubar {
+  justify-self: end;
+}
+
+.topbar {
+  font-size: larger;
+}
+
+.liverate {
+  font-size: medium;
+  font-weight: 500;
+}
+
+.headerButton {
+  background-color: #7c00cd; /* Purple */
+  min-width: 250px;
+  color: #fff;
+  font-size: large;
+  font-weight: 600;
+  border: 0px;
+  padding: 5px;
+  align-content: end;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
