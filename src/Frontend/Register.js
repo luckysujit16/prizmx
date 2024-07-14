@@ -18,11 +18,11 @@ const Register = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    console.log(`${name}: ${value}`);
   };
 
   const validateForm = () => {
     let formErrors = {};
-    // Add validation logic here
     // Validate password strength
     if (formData.password !== formData.confirmPassword) {
       formErrors.confirmPassword = "Passwords do not match";
@@ -36,10 +36,14 @@ const Register = () => {
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
       try {
-        const response = await axios.post("./routes/register", formData);
+        const response = await axios.post(
+          "http://localhost:5000/api/register",
+          formData
+        );
         setMessage(response.data.message);
       } catch (error) {
         setMessage("Registration failed");
+        console.error(error.response.data); // log error for debugging
       }
     } else {
       setErrors(validationErrors);
