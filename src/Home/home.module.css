@@ -27,8 +27,9 @@
 }
 
 .headerButton {
-  background-color: #7c00cd; /* Purple */
-  min-width: 250px;
+  background-color: hsl(276, 100%, 40%); /* Purple */
+  min-width: 150px;
+  max-width: 200px;
   color: #fff;
   font-size: large;
   font-weight: 600;
@@ -37,4 +38,13 @@
   align-content: end;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.banner {
+  max-height: 500px;
+  padding: 1rem;
+}
+
+.banner__content {
+  margin: 4rem;
 }
