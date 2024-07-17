@@ -4,6 +4,7 @@
   text-align: center;
   min-height: 50px;
   margin-top: 5px;
+  background-color: #fff;
 }
 
 .logo {
@@ -27,7 +28,7 @@
 }
 
 .headerButton {
-  background-color: hsl(276, 100%, 40%); /* Purple */
+  background-color: #7a00cc; /* Purple */
   min-width: 150px;
   max-width: 200px;
   color: #fff;
@@ -40,11 +41,138 @@
   border-bottom-right-radius: 5px;
 }
 
+section {
+  /* background-color: #cdcdcdc1; */
+  background-image: linear-gradient(to bottom, #4a1447, #481450a7, #e4e4e4c1);
+  height: 750px;
+}
+
 .banner {
   max-height: 500px;
   padding: 1rem;
+  margin-top: 3rem;
+  color: #fff;
 }
 
 .banner__content {
-  margin: 4rem;
+  margin-top: 10rem;
+}
+
+.banner__content h1 {
+  font-family: fantasy;
+}
+
+.banner__text {
+  text-align: left;
+  margin-left: 0;
+}
+
+.infobox {
+  margin: 2rem;
+  text-align: center;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px 2px #b0b0b0;
+}
+
+.usp {
+  background-color: #fff;
+  height: 175px;
+  padding: 1.5rem;
+}
+
+.uspcard {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #fff;
+
+  width: auto;
+}
+
+.usp_img {
+  width: auto;
+  min-height: 90px;
+}
+
+figure {
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+figcaption {
+  font-size: 1.25rem;
+  font-family: monospace;
+  color: #6457ff;
+}
+
+.figbody {
+  font-family: system-ui;
+  text-align: justify;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  color: #2b2b2b;
+}
+
+.footer {
+  background-color: #2b2b2b;
+  color: #fff;
+  bottom: 0;
+}
+
+main {
+  min-height: 80vh;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .infobox {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .banner {
+    width: auto;
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+
+  .banner__content {
+    margin-top: 10rem;
+    text-align: center;
+  }
+
+  .banner__text {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .infobox {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .banner {
+    width: auto;
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+
+  .banner__content {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .banner__text {
+    text-align: center;
+  }
 }

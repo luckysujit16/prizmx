@@ -1,10 +1,12 @@
 // src/components/Body.js
 import React from "react";
+import Sections from "./Usp";
+
 // import Banner from "./Banner";
 
-const Body = ({ children }) => {
+const Body = () => {
   // const children = [<Banner />];
-  return <main className="container">{children}</main>;
+  return <main></main>;
 };
 
 export default Body;

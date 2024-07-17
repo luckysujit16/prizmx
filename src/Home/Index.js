@@ -9,16 +9,13 @@ import Banner from "./components/Banner";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Header />
       <CustomCarousel />
       <Banner />
-      <Body>
-        <h1>Welcome to Prizmx Crypto Exchange</h1>
-        <p>The best place to exchange your cryptocurrencies.</p>
-      </Body>
+      <Body />
       <Footer />
-    </div>
+    </>
   );
 };
 
