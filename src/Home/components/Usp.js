@@ -5,6 +5,7 @@ import icon2 from "../assets/img/icons/Proof-of-Stake-icon.png";
 import icon3 from "../assets/img/icons/Decentralized-Crypto-iocn.png";
 
 const Usp = () => {
+  console.log("This is usp");
   return (
     <div className={styles.infobox}>
       <div className={styles.uspcard}>
