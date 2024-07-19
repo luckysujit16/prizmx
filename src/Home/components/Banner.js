@@ -15,9 +15,9 @@ const Banner = () => {
           </div>
 
           <div className="col-md-4 col-sm-12 col-xs-12">
-            <div className={styles.banner__content}>
-              <h1 className={styles.banner__title}>Deal Crypto Peer To Peer</h1>
-              <p className={styles.banner__text}>
+            <div className={styles.content}>
+              <h1 className={styles.title}>Deal Crypto Peer To Peer</h1>
+              <p className={styles.text}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               </p>
             </div>

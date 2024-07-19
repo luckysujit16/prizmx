@@ -4,6 +4,9 @@ import HowDoes from "./HowDoes";
 import MarketPlace from "./MarketPlace";
 import ParaCalculator from "./ParaCalculator";
 import ReviewSlider from "./ReviewSlider";
+import CallForAction from "./CallForAction";
+import ParaminingFactor from "./ParaminingFactor";
+import PressNMedia from "./PressNMedia";
 
 // import Banner from "./Banner";
 
@@ -15,6 +18,9 @@ const Body = () => {
       <MarketPlace />
       <ParaCalculator />
       <ReviewSlider />
+      <CallForAction />
+      <ParaminingFactor />
+      <PressNMedia />
     </main>
   );
 };

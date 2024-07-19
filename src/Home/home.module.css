@@ -45,29 +45,38 @@ section {
   /* background-image: linear-gradient(to bottom, #292929, #e4e4e4c1); */
   min-height: 950px;
   clear: both;
-  box-shadow: 2px 2px 10px 2px #b0b0b0;
+  box-shadow: 0px 8px 15px 0px #b0b0b0;
+}
+
+.section {
+  box-shadow: 0px 8px 15px 0px #b0b0b0;
+  min-height: 450px;
 }
 
 .banner {
-  max-height: 500px;
-  padding: 1rem;
+  max-width: 100%;
   margin-top: 3rem;
-  color: #6457ff;
+  color: #183f72;
 }
 
-.banner__content {
+.banner_marketplace {
+  max-height: 400px;
+}
+
+.content {
   margin-top: 10rem;
 }
 
-.banner__content h1 {
+.content h1 {
   font-family: fantasy;
-  color: #6457ff;
+  color: #183f72;
 }
 
-.banner__text {
+.text {
   text-align: left;
   margin-left: 0;
   color: #2b2b2b;
+  text-align: justify;
 }
 
 .infobox {
@@ -109,7 +118,7 @@ figure {
 figcaption {
   font-size: 1.25rem;
   font-family: monospace;
-  color: #6457ff;
+  color: #183f72;
 }
 
 .figbody {
@@ -136,23 +145,98 @@ main {
   clear: both;
 }
 
-.HowDoes {
+.title {
   font-size: 1.75rem;
   font-family: fantasy;
-  color: #6457ff;
-  padding-top: 1rem;
+  color: #183f72;
+  padding-top: 3rem;
 }
 
-.prospects {
+.introtext {
   font-family: system-ui;
   font-size: small;
   font-weight: 700;
   color: #535353;
 }
 
+.reviewContainer {
+  min-height: 450px;
+  background-color: #dcdcdc;
+}
+
+.reviewSlider {
+  min-height: 450px;
+  width: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+}
+
+.SpacerSection {
+  height: 250px;
+  background-color: #183f72;
+  color: #fff;
+}
+
+.para_section {
+  height: 1150px;
+  box-shadow: 0px 8px 15px 0px #b0b0b0;
+}
+
+.paramining_banner {
+  height: auto;
+  width: 100%;
+  padding-top: 2rem;
+}
+
+.para_title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding-top: 2rem;
+  font-family: fantasy;
+  color: #183f72;
+}
+
+.para_text {
+  text-align: justify;
+  font-family: system-ui;
+  padding-top: 2rem;
+}
+
+.para_text_bold {
+  font-weight: 600;
+  padding-top: 2rem;
+}
+
+.highlight_text {
+  text-align: justify;
+  font-family: system-ui;
+  font-size: 1.3rem;
+  color: #183f72;
+  font-style: italic;
+}
+
+.PressNMedia {
+  height: 600px;
+}
+
+.carousel {
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 330px;
+  height: 330px;
+  box-shadow: 0px 8px 15px 0px #b0b0b0;
+}
+
 .footer {
   background-color: #2b2b2b;
   color: #fff;
+  top: auto;
   bottom: 0;
 }
 
@@ -174,33 +258,46 @@ main {
   }
 
   .banner {
-    width: auto;
-    max-width: 100%;
+    width: 100%;
     margin-top: 2rem;
   }
 
-  .banner__content {
+  .content {
     margin-top: 10rem;
     text-align: center;
   }
 
-  .banner__text {
+  .text {
     text-align: center;
   }
 
-  .HowDoes {
-    font-size: 1.25rem;
-  }
-
-  .reviewContainer {
-    display: flex;
-    min-height: 450px;
-    background-color: #535353;
+  .video {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
   }
 
   .reviewSlider {
-    height: 450px;
-    width: 600px;
+    min-height: 300px;
+    width: auto;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .SpacerSection {
+    height: 350px;
+  }
+
+  .para_section {
+    height: 1150px;
+  }
+
+  .paramining_banner {
+    height: auto;
+    width: 100%;
+    padding: 15px;
   }
 }
 
@@ -218,21 +315,39 @@ main {
   }
 
   .banner {
-    width: auto;
-    max-width: 100%;
+    width: 100%;
     margin-top: 2rem;
   }
 
-  .banner__content {
+  .content {
     margin-top: 2rem;
     text-align: center;
   }
 
-  .banner__text {
+  .text {
     text-align: center;
   }
 
-  .HowDoes {
+  .title {
     font-size: 1.25rem;
+  }
+
+  .video {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .SpacerSection {
+    height: 400px;
+  }
+
+  .para_section {
+    height: 1250px;
+  }
+
+  .paramining_banner {
+    height: auto;
+    width: 100%;
   }
 }
