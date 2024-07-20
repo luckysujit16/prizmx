@@ -14,7 +14,7 @@ const HowDoes = () => {
               className={styles.banner}
             />
           </div>
-          <div className="col-lg-6 col-sm-12 col-xs-12 my-5  p-5 text-start">
+          <div className="col-lg-6 col-sm-12 col-xs-12 my-5 text-start">
             <div className="col-lg-12 col-sm-12 col-xs-12">
               <div className="row">
                 <div className="col-1 fs-5">

@@ -14,6 +14,26 @@ import adx from "../assets/img/news/adx.jpg";
 import "./Carousel.module.css";
 
 const PressNMedia = () => {
+  const sliederButton = () => {
+    const prev = document.getElementById("prev-btn");
+    const next = document.getElementById("next-btn");
+    const list = document.getElementById("item-list");
+    const itemWidth = 300;
+    const padding = 30;
+    if (prev) {
+      prev.addEventListener("click", () => {
+        console.log("Prev Button");
+        list.scrollLeft -= itemWidth + padding;
+      });
+    }
+    if (next) {
+      next.addEventListener("click", () => {
+        console.log("Next Button");
+        list.scrollLeft += itemWidth + padding;
+      });
+    }
+  };
+
   return (
     <div className={styles.PressNMedia}>
       <div className="container-fluid">
@@ -21,59 +41,90 @@ const PressNMedia = () => {
           <div className={styles.title}>PRIZMX PRESS & MEDIA</div>
         </div>
         <div className="row px-5">
-          <Carousel>
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={ad1} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
+          <button
+            type="button"
+            id="prev-btn"
+            onClick={sliederButton}
+            className={styles.prevbtn}
+          ></button>
+          <div className={styles.Carousel}>
+            <div id="item-list" class={styles.itemList}>
+              {/* Items  */}
+              <img
+                id="item"
+                class={styles.item}
+                src={ad1}
+                alt="Media Articles"
+              />
 
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={ad2} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={ad3} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={ad4} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={ad5} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={ad6} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={ad7} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={ad8} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={ad9} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className={styles.carousel}>
-                <img src={adx} alt="Media Articles" />
-              </div>
-            </Carousel.Item>
-          </Carousel>
+              <img
+                id="item"
+                class={styles.item}
+                src={ad2}
+                alt="Media Articles"
+              />
+
+              <img
+                id="item"
+                class={styles.item}
+                src={ad3}
+                alt="Media Articles"
+              />
+
+              <img
+                id="item"
+                class={styles.item}
+                src={ad4}
+                alt="Media Articles"
+              />
+
+              <img
+                id="item"
+                class={styles.item}
+                src={ad5}
+                alt="Media Articles"
+              />
+
+              <img
+                id="item"
+                class={styles.item}
+                src={ad6}
+                alt="Media Articles"
+              />
+
+              <img
+                id="item"
+                class={styles.item}
+                src={ad7}
+                alt="Media Articles"
+              />
+
+              <img
+                id="item"
+                class={styles.item}
+                src={ad8}
+                alt="Media Articles"
+              />
+              <img
+                id="item"
+                class={styles.item}
+                src={ad9}
+                alt="Media Articles"
+              />
+              <img
+                id="item"
+                class={styles.item}
+                src={adx}
+                alt="Media Articles"
+              />
+            </div>
+          </div>
+          <button
+            type="button"
+            id="next-btn"
+            onClick={sliederButton}
+            className={styles.nextbtn}
+          ></button>
         </div>
       </div>
     </div>
