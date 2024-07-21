@@ -1,0 +1,90 @@
+.contact_container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  min-height: 250px;
+}
+
+.contact_header {
+  text-align: left;
+
+  padding: 2rem;
+}
+
+.contact_logo {
+  max-height: 30px;
+  height: auto;
+}
+
+.contact_description {
+  font-size: 0.9rem;
+  color: #6c757d;
+  padding: 0.9rem;
+}
+
+.contact_info {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.contact_email,
+.contact_hours {
+  font-size: 0.875rem;
+  color: #6c757d;
+  padding: 0.5rem;
+}
+
+.contact_social {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.social_icon {
+  margin: 0 5px;
+  color: #6c757d;
+  font-size: 1.5rem;
+}
+
+.contact_nav {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.nav_link {
+  margin: 0 10px;
+  color: #343a40;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav_link:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1024px) {
+  .contact_container {
+    height: 500px;
+  }
+  .contact_info {
+    width: 100%;
+  }
+  .contact_header {
+    padding: 0.75rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .contact_container {
+    height: 500px;
+    text-align: center;
+  }
+
+  .contact_info {
+    width: 100%;
+  }
+
+  .contact_header {
+    padding: 0.75rem;
+    text-align: center;
+  }
+}

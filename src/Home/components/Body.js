@@ -7,6 +7,7 @@ import ReviewSlider from "./ReviewSlider";
 import CallForAction from "./CallForAction";
 import ParaminingFactor from "./ParaminingFactor";
 import PressNMedia from "./PressNMedia";
+import Contact from "./Contact";
 
 // import Banner from "./Banner";
 
@@ -21,6 +22,7 @@ const Body = () => {
       <CallForAction />
       <ParaminingFactor />
       <PressNMedia />
+      <Contact />
     </main>
   );
 };

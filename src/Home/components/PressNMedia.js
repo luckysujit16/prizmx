@@ -18,8 +18,8 @@ const PressNMedia = () => {
     const prev = document.getElementById("prev-btn");
     const next = document.getElementById("next-btn");
     const list = document.getElementById("item-list");
-    const itemWidth = 300;
-    const padding = 30;
+    const itemWidth = 325;
+    const padding = 50;
     if (prev) {
       prev.addEventListener("click", () => {
         console.log("Prev Button");
