@@ -4,8 +4,31 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const { check, validationResult } = require('express-validator');
+const nodemailer = require("nodemailer");
 const pool = require('../../db/connection');
 const auth = require('../../middleware/auth');
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+    },
+});
+
+const sendVerificationEmail = async (email, verificationCode) => {
+    const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: email,
+        subject: "Email Verification",
+        text: `Your verification code is: ${verificationCode}`,
+    };
+    try {
+        await transporter.sendMail(mailOptions);
+        return true;
+    } catch (err) {
+        return false;
+    }
+};
 
 // @route    POST api/auth/signup
 // @desc     Register user
@@ -25,7 +48,7 @@ router.post(
         }
         const { name, email, password, referred_by } = req.body;
         try {
-            
+
             const [userRows] = await pool.query('SELECT * FROM pzmx_users WHERE email = ?', [email]);
             if (userRows.length > 0) {
                 return res.status(400).json({ errors: [{ msg: 'User already exists' }] });
@@ -45,9 +68,10 @@ router.post(
 
             await pool.query(
                 'INSERT INTO pzmx_users (name, email, password, referral_id, referred_by, otp) VALUES (?, ?, ?, ?, ?, ?)',
-                [name, email, hashedPassword, referralID,  referred_by, otp]
+                [name, email, hashedPassword, referralID, referred_by, otp]
             );
-            res.json({status : "OK"});
+            sendVerificationEmail(email, otp);
+            res.json({ status: "OK" });
         } catch (err) {
             console.error(err.message);
             return res.status(500).json({ errors: [{ msg: err.message }] });
@@ -86,6 +110,9 @@ router.post(
             if (!isMatch) {
                 return res.status(400).json({ errors: [{ msg: 'Invalid Password' }] });
             }
+            if(!user.is_active){
+                return res.status(400).json({ errors: [{ msg: 'Your account is deactivated please contact support!' }] });
+            }
             // Create the JWT payload
             const payload = {
                 user: {
@@ -93,6 +120,7 @@ router.post(
                     email: email
                 }
             };
+           
             // Sign the JWT token
             jwt.sign(
                 payload,
@@ -109,5 +137,56 @@ router.post(
         }
     }
 );
+
+// @route    POST api/auth/email-verification
+// @desc     Verify User Email Address
+// @access   Public
+
+router.post(
+    '/email-verification',
+    [
+        check('otp', 'Please enter a valid Otp').isNumeric()
+    ],
+    async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
+        const { otp } = req.body;
+
+        try {
+            const [userRow] = await pool.query('SELECT * FROM pzmx_users WHERE otp = ?', [otp]);
+            if (userRow.length === 0) {
+                return res.status(400).json({ errors: [{ msg: 'Invalid Otp' }] });
+            }
+
+            const user = userRow[0];
+
+            await pool.query('UPDATE pzmx_users SET otp = null, is_verified = 1 WHERE otp = ?', [otp]);
+
+            const payload = {
+                user: {
+                    user_id: user.id,
+                    email: user.email
+                }
+            };
+
+            // Sign the JWT token
+            jwt.sign(
+                payload,
+                process.env.JWT_SECRET,
+                { expiresIn: '2 days' },
+                (err, token) => {
+                    if (err) throw err;
+                    res.json({ token });
+                }
+            );
+        } catch (err) {
+            return res.status(500).json({ errors: [{ msg: err.message }] });
+        }
+    }
+);
+
 
 module.exports = router;
