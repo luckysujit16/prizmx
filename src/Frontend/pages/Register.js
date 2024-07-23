@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styles from "../Register.module.css";
+import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -51,75 +52,83 @@ const Register = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+    <>
+      <div className="container-fluid ">
+        <div className="row d-flex p-5">
+          <div className={styles.logoSection}>
+            <img src={imgLogo} alt="Prizm Logo" className={styles.imgLogo} />
+          </div>
+          <div className={styles.menuSection}>
+            <button type="button" className={styles.menuButton}>
+              Login
+            </button>
+          </div>
         </div>
-        <div className={styles.formGroup}>
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+      </div>
+      <div className="container-fluid">
+        <div className="row mx-5 justify-content-center">
+          <div className="col-md-4 col-sm-12 my-5 ">
+            <div className="row">
+              <p className="text-center fs-5 mb-5 fw-semibold text-secondary">
+                PrizmX Registration Form
+              </p>
+            </div>
+            <div className={styles.formSection}>
+              <form onSubmit={handleSubmit} className={styles.form}>
+                <div className="row mb-5">
+                  <div className="col-4 p-2">
+                    <label className="fs-6">Email</label>
+                  </div>
+                  <div className="col-8">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Please Enter Valid Email Address"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="form form-control"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="row mb-5">
+                  <div className="col-4 p-2">
+                    <label className="fs-6">Password</label>
+                  </div>
+                  <div className="col-8">
+                    <input
+                      type="text"
+                      name="password"
+                      placeholder="Please Strong Alpha Numeric Password"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="form form-control"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="row mb-5">
+                  <div className="col-4 p-2">
+                    <label className="fs-6">Confirm Password</label>
+                  </div>
+                  <div className="col-8">
+                    <input
+                      type="text"
+                      name="confirm-password"
+                      placeholder="Confirm Password as per above field"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="form form-control"
+                      required
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div className={styles.formGroup}>
-          <label>Mobile</label>
-          <input
-            type="text"
-            name="mobile"
-            value={formData.mobile}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-          {errors.confirmPassword && (
-            <span className={styles.error}>{errors.confirmPassword}</span>
-          )}
-        </div>
-        <div className={styles.formGroup}>
-          <label>Referral ID (optional)</label>
-          <input
-            type="text"
-            name="referralId"
-            value={formData.referralId}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
+      </div>
+    </>
   );
 };
 

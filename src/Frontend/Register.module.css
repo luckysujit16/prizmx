@@ -1,4 +1,28 @@
 /* src/Home/Register.module.css */
+.logoSection {
+  width: 20%;
+}
+
+.menuSection {
+  width: 80%;
+  text-align: end;
+}
+
+.formSection {
+  width: 100%;
+  box-shadow: 1px 1px 10px 1px #b0b0b0;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.imgLogo {
+  width: 100%;
+  max-width: 150px;
+}
+
+.menuButton {
+  max-width: 200px;
+}
 .container {
   width: 100%;
   max-width: 400px;
@@ -42,4 +66,30 @@ button:hover {
 
 .navbar-toggler {
   border: 1px solid;
+}
+
+@media only screen and (max-width: 1024px) {
+  .logoSection {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .menuSection {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .logoSection {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .menuSection {
+    width: 100%;
+    text-align: center;
+  }
 }
