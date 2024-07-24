@@ -10,9 +10,21 @@
 
 .formSection {
   width: 100%;
+  max-width: 550px;
+  margin: auto;
+  justify-content: center;
   box-shadow: 1px 1px 10px 1px #b0b0b0;
   padding: 2rem;
   border-radius: 10px;
+}
+
+.formField {
+  padding: 5px;
+}
+
+.formlink {
+  text-decoration: none;
+  color: #5b5b5b;
 }
 
 .imgLogo {
@@ -60,8 +72,8 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-color: #dddddd;
-  color: #6e6e6e;
+  background-color: #5b5b5b;
+  color: #ffffff;
 }
 
 .navbar-toggler {
@@ -79,6 +91,11 @@ button:hover {
     width: 100%;
     text-align: center;
   }
+
+  .formSection {
+    width: 100%;
+    min-width: 450px;
+  }
 }
 
 @media only screen and (max-width: 769px) {
@@ -91,5 +108,10 @@ button:hover {
   .menuSection {
     width: 100%;
     text-align: center;
+  }
+
+  .formSection {
+    width: 100%;
+    min-width: 350px;
   }
 }

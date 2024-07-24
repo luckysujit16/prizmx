@@ -1,5 +1,6 @@
 // src/Home/Register.js
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "../Register.module.css";
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
@@ -51,35 +52,66 @@ const Register = () => {
     }
   };
 
+  let navigate = useNavigate();
+  const routeChange = (path) => {
+    const { name, value } = path.target;
+
+    console.log("Entered routeChange Name = ", +name + " Value " + value);
+    switch (value) {
+      case "login":
+        navigate("/login");
+        break;
+      case "verify":
+        navigate("/verify");
+        break;
+      // Add more cases as needed
+      default:
+        navigate("/");
+        break;
+    }
+  };
+
   return (
     <>
       <div className="container-fluid ">
         <div className="row d-flex p-5">
           <div className={styles.logoSection}>
-            <img src={imgLogo} alt="Prizm Logo" className={styles.imgLogo} />
+            <img
+              onClick={routeChange}
+              name="Logo"
+              value="/"
+              src={imgLogo}
+              alt="Prizm Logo"
+              className={styles.imgLogo}
+            />
           </div>
           <div className={styles.menuSection}>
-            <button type="button" className={styles.menuButton}>
+            <button
+              onClick={routeChange}
+              name="Login"
+              value="login"
+              type="button"
+              className={styles.menuButton}
+            >
               Login
             </button>
           </div>
         </div>
       </div>
-      <div className="container-fluid">
-        <div className="row mx-5 justify-content-center">
-          <div className="col-md-4 col-sm-12 my-5 ">
-            <div className="row">
-              <p className="text-center fs-5 mb-5 fw-semibold text-secondary">
+      <div className="container">
+        <div className="row px-5">
+          <div className="col-lg-12 col-md-12 col-sm-12 d-flex my-5 ">
+            <div className={styles.formSection}>
+              <p className="text-center fs-5 mb-3 fw-semibold text-secondary">
                 PrizmX Registration Form
               </p>
-            </div>
-            <div className={styles.formSection}>
+
               <form onSubmit={handleSubmit} className={styles.form}>
-                <div className="row mb-5">
-                  <div className="col-4 p-2">
-                    <label className="fs-6">Email</label>
+                <div className="mb-3">
+                  <div className={styles.formField}>
+                    <label className="fs-6 pb-3">Email</label>
                   </div>
-                  <div className="col-8">
+                  <div className={styles.formField}>
                     <input
                       type="email"
                       name="email"
@@ -91,11 +123,11 @@ const Register = () => {
                     />
                   </div>
                 </div>
-                <div className="row mb-5">
-                  <div className="col-4 p-2">
-                    <label className="fs-6">Password</label>
+                <div className="mb-3">
+                  <div className={styles.formField}>
+                    <label className="fs-6 pb-3">Password</label>
                   </div>
-                  <div className="col-8">
+                  <div className={styles.formField}>
                     <input
                       type="text"
                       name="password"
@@ -107,11 +139,11 @@ const Register = () => {
                     />
                   </div>
                 </div>
-                <div className="row mb-5">
-                  <div className="col-4 p-2">
-                    <label className="fs-6">Confirm Password</label>
+                <div className="mb-3">
+                  <div className={styles.formField}>
+                    <label className="fs-6 pb-3">Confirm Password</label>
                   </div>
-                  <div className="col-8">
+                  <div className={styles.formField}>
                     <input
                       type="text"
                       name="confirm-password"
@@ -123,6 +155,18 @@ const Register = () => {
                     />
                   </div>
                 </div>
+                <button
+                  onClick={routeChange}
+                  value="verify"
+                  name="Register"
+                  type="submit"
+                  className="p-2 my-4"
+                >
+                  Register
+                </button>
+                <a href="/" className={styles.formlink}>
+                  Back To PrizmX
+                </a>
               </form>
             </div>
           </div>

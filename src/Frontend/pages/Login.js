@@ -42,6 +42,17 @@ const Verify = () => {
               className={styles.imgLogo}
             />
           </div>
+          <div className={styles.menuSection}>
+            <button
+              onClick={(click) => {
+                alert("Register Clicked");
+              }}
+              type="button"
+              className={styles.menuButton}
+            >
+              Registration
+            </button>
+          </div>
         </div>
       </div>
       <div className="container">
@@ -49,12 +60,23 @@ const Verify = () => {
           <div className="col-lg-12 col-md-12 col-sm-12 d-flex my-5 ">
             <div className={styles.formSection}>
               <p className="text-center fs-5 mb-3 fw-semibold text-secondary">
-                Verify OTP
+                PrizmX User Login
               </p>
 
               <form onSubmit={handleSubmit} className={styles.form}>
                 <div className="mb-3">
                   <div className={styles.formField}>
+                    <label className="fs-6 pb-3">Email</label>
+                    <input
+                      type="number"
+                      name="verify_otp"
+                      onChange={handleChange}
+                      className="form form-control text-center"
+                      required
+                    />
+                  </div>
+                  <div className={styles.formField}>
+                    <label className="fs-6 pb-3">Password</label>
                     <input
                       type="number"
                       name="verify_otp"
@@ -66,7 +88,7 @@ const Verify = () => {
                 </div>
 
                 <button type="submit" className="p-2 my-4">
-                  Submit OTP
+                  Login
                 </button>
               </form>
             </div>
