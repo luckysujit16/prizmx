@@ -209,13 +209,17 @@ main {
 
 .para_text {
   text-align: justify;
-  font-family: system-ui;
+  /* font-family: system-ui; */
   padding-top: 2rem;
 }
 
 .para_text_bold {
   font-weight: 600;
   padding-top: 2rem;
+}
+
+.reviewContent {
+  padding-right: 3rem;
 }
 
 .highlight_text {
@@ -275,7 +279,7 @@ main {
 }
 
 .button:hover {
-  background-color: #e2e2e200;
+  background-color: #f48fff;
 }
 
 .nextbtn {
@@ -301,13 +305,11 @@ main {
   display: none;
 }
 
-/* .carousel {
-  margin-top: 1rem;
-  padding: 1rem;
-  width: 330px;
-  height: 330px;
-  box-shadow: 0px 8px 15px 0px #b0b0b0;
-} */
+.errorImg {
+  width: 100%;
+  max-height: 650px;
+  max-width: 900px;
+}
 
 .footer {
   background-color: #2b2b2b;
@@ -353,6 +355,10 @@ main {
     min-height: 300px;
   }
 
+  .reviewContent {
+    padding-right: 0;
+  }
+
   .reviewSlider {
     min-height: 300px;
     width: auto;
@@ -375,7 +381,6 @@ main {
   .paramining_banner {
     height: auto;
     width: 100%;
-    padding: 15px;
   }
 
   .item {
@@ -413,6 +418,10 @@ main {
 
   .title {
     font-size: 1.25rem;
+  }
+
+  .reviewContent {
+    padding-right: 0;
   }
 
   .video {

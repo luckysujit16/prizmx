@@ -3,6 +3,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Index from "../Home/Index";
 import E404 from "../E404";
 import Register from "../Frontend/pages/Register";
+import Verify from "../Frontend/pages/Verify";
+import Login from "../Frontend/pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/verify",
+    element: <Verify />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 

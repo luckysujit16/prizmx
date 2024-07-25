@@ -18,7 +18,9 @@
 .contact_description {
   font-size: 0.9rem;
   color: #6c757d;
-  padding: 0.9rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: left;
 }
 
 .contact_info {
@@ -47,6 +49,9 @@
 .contact_nav {
   margin-top: 20px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav_link {
@@ -62,20 +67,26 @@
 
 @media only screen and (max-width: 1024px) {
   .contact_container {
-    height: 500px;
+    height: 525px;
   }
   .contact_info {
     width: 100%;
   }
   .contact_header {
     padding: 0.75rem;
+    text-align: center;
+  }
+  .contact_description {
     text-align: center;
   }
 }
 
 @media only screen and (max-width: 769px) {
   .contact_container {
-    height: 500px;
+    height: 600px;
+    text-align: center;
+  }
+  .contact_description {
     text-align: center;
   }
 
@@ -86,5 +97,11 @@
   .contact_header {
     padding: 0.75rem;
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .contact_container {
+    height: 700px;
   }
 }

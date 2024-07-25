@@ -15,7 +15,7 @@ const CallForAction = () => {
           </div>
           <div className="col-12 col-md-6 col-lg-4 p-5">
             <div className={styles.callForAction}>
-              <button type="button" className="btn btn-info">
+              <button type="button" className="btn btn-info text-light fw-bold">
                 REGISTER NOW
               </button>
             </div>

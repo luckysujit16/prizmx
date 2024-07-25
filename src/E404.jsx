@@ -3,6 +3,7 @@ import "./App.css";
 import errorImg from "./assets/ErrorPage.gif";
 import Header from "../src/Home/components/Header";
 import { useNavigate } from "react-router-dom";
+import styles from "./Home/home.module.css";
 
 const E404 = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const E404 = () => {
             </h2>
             <img
               src={errorImg}
-              className="error-img"
+              className={styles.errorImg}
               alt="Page Not Found Error Page"
             ></img>
           </div>
