@@ -5,6 +5,7 @@ import E404 from "../E404";
 import Register from "../Frontend/pages/Register";
 import Verify from "../Frontend/pages/Verify";
 import Login from "../Frontend/pages/Login";
+import Dashboard from "../Users/pages/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
 ]);
 

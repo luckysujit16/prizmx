@@ -1,0 +1,60 @@
+{
+  "dashboardData": [
+    {
+      "id": 1,
+      "name": "Total Supply",
+      "description": "Total supply of PZMX coins",
+      "image": "http://localhost:3000/User/assets/img/icons/total-supply-1.png",
+      "data": "21M"
+    },
+    {
+      "id": 2,
+      "name": "Coins To Be Mined",
+      "description": "Coins remaining to be mined",
+      "image": "../assets/img/icons/coins-to-be-mined.png",
+      "data": "0"
+    },
+    {
+      "id": 3,
+      "name": "Coins Paramined",
+      "description": "Coins paramined till date",
+      "image": "../assets/img/icons/coins-paramined-1.png",
+      "data": "0"
+    },
+    {
+      "id": 4,
+      "name": "LIVE RATE",
+      "description": "Last Traded Price",
+      "image": "../assets/img/icons/coin-holders-1.png",
+      "data": "1"
+    },
+    {
+      "id": 5,
+      "name": "Avg. Coins in Users Wallet",
+      "description": "Average Users Wallet Balance",
+      "image": "../assets/img/icons/users-wallet-1.png",
+      "data": "0"
+    },
+    {
+      "id": 6,
+      "name": "Number Of Users",
+      "description": "Total Users in Exchange",
+      "image": "../assets/img/icons/total-supply-1.png",
+      "data": "150"
+    },
+    {
+      "id": 7,
+      "name": "P2P Demand in Exchange",
+      "description": "BUY orders in P2p order book",
+      "image": "../assets/img/icons/demand-exchange-1.png",
+      "data": "500"
+    },
+    {
+      "id": 8,
+      "name": "P2P Supply in Exchange",
+      "description": "SELL orders in P2p order book",
+      "image": "../assets/img/icons/supply-exchange-1.png",
+      "data": "250"
+    }
+  ]
+}

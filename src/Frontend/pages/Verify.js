@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
 import styles from "../Verify.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Verify = () => {
   const [formData, setFormData] = useState({
@@ -30,13 +31,32 @@ const Verify = () => {
     }
   };
 
+  let navigate = useNavigate();
+  const routeChange = (path) => {
+    const { name, value } = path.target;
+    // console.log(`Target Name ${name} Link ${value} Clicked.`);
+    // return;
+    switch (value) {
+      case "/":
+        navigate("/");
+        break;
+      case "dashboard":
+        navigate("/dashboard");
+        break;
+      default:
+        navigate("/");
+    }
+  };
+
   return (
     <>
       <div className="container-fluid ">
         <div className="row d-flex p-5">
           <div className={styles.logoSection}>
             <img
-              onClick={(click) => {}}
+              onClick={routeChange}
+              name="Logo"
+              value="/"
               src={imgLogo}
               alt="Prizm Logo"
               className={styles.imgLogo}
@@ -65,7 +85,13 @@ const Verify = () => {
                   </div>
                 </div>
 
-                <button type="submit" className="p-2 my-4">
+                <button
+                  name="otp_verify"
+                  value="dashboard"
+                  onClick={routeChange}
+                  type="submit"
+                  className="p-2 my-4"
+                >
                   Submit OTP
                 </button>
               </form>
