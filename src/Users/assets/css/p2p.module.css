@@ -1,0 +1,161 @@
+.p2pContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-height: 300px;
+}
+
+.p2pTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #767676;
+  text-align: center;
+  padding: 1.25rem;
+}
+
+.p2pOrderBookTitle {
+  padding: 1rem;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #d5d5d5;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.p2prow {
+  padding: 1rem;
+}
+
+.p2pdataRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.p2pdataColumn {
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.buyFormRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.p2pBuyTitle {
+  padding: 1rem;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #f1f1f1;
+  text-align: center;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.p2pDemandBox {
+  box-shadow: 0px 4px 15px -3px #b0b0b0;
+  border-radius: 5px;
+}
+
+.p2pcolumn {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.p2pcolumnTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px;
+  margin-top: 0.75rem;
+  color: #767676;
+}
+
+.p2pSupplyBox {
+  width: 30%;
+  padding: auto;
+}
+
+.p2pBuyBox {
+  width: 20%;
+  padding: auto;
+}
+
+.buyFormButton {
+  width: auto;
+}
+
+button {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.p2pSellBox {
+  width: 20%;
+  padding: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  .p2pContainer {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  .p2pDemandBox {
+    width: 100%;
+  }
+
+  .p2pcolumnTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .p2pSupplyBox {
+    width: 100%;
+  }
+
+  .buyFormRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .p2pBuyBox {
+    width: 100%;
+    padding: auto;
+  }
+
+  .p2pSellBox {
+    width: 100%;
+    padding: auto;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .p2pContainer {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  .p2pDemandBox {
+    width: 100%;
+  }
+
+  .buyFormRow {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .p2pSupplyBox {
+    width: 100%;
+  }
+
+  .p2pBuyBox {
+    width: 100%;
+    padding: auto;
+  }
+
+  .p2pSellBox {
+    width: 100%;
+    padding: auto;
+  }
+}

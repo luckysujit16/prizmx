@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Total Supply",
       "description": "Total supply of PZMX coins",
-      "image": "http://localhost:3000/User/assets/img/icons/total-supply-1.png",
+      "image": "../assets/img/icons/total-supply-1.png",
       "data": "21M"
     },
     {
@@ -55,6 +55,50 @@
       "description": "SELL orders in P2p order book",
       "image": "../assets/img/icons/supply-exchange-1.png",
       "data": "250"
+    }
+  ],
+  "buyOrders": [
+    {
+      "id": 1,
+      "userid": "luckysujit",
+      "quantity": 0.5,
+      "price": 20
+    },
+    {
+      "id": 2,
+      "userid": "manoj",
+      "quantity": 9,
+      "price": 20.05
+    },
+    {
+      "id": 3,
+      "userid": "rakesh",
+      "quantity": 6,
+      "price": 20.15
+    },
+    {
+      "id": 4,
+      "userid": "salman",
+      "quantity": 55,
+      "price": 20.1
+    },
+    {
+      "id": 5,
+      "userid": "alex",
+      "quantity": 15,
+      "price": 20.25
+    },
+    {
+      "id": 6,
+      "userid": "chu",
+      "quantity": 20,
+      "price": 20.55
+    },
+    {
+      "id": 7,
+      "userid": "manoj",
+      "quantity": 5,
+      "price": 21.0
     }
   ]
 }

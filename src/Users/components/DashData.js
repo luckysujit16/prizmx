@@ -1,33 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import icon1 from "../assets/img/icons/total-supply-1.png";
 import styles from "../assets/css/Dashboard.module.css";
 
-const DashData = () => {
-  const [dashboardData, setdashData] = useState([]);
-  const url = process.env.REACT_APP_DASH_DATA_URL;
+// Function to dynamically import images
+const importAll = (r) => {
+  let images = {};
+  r.keys().map((item, index) => {
+    images[item.replace("./", "")] = r(item);
+  });
+  return images;
+};
 
-  // console.log(process.env.REACT_APP_DASH_DATA_URL);
+const images = importAll(
+  require.context("../assets/img/icons", false, /\.(png|jpe?g|svg)$/)
+);
+
+const DashData = () => {
+  const [dashboardData, setDashboardData] = useState([]);
+  const url = process.env.REACT_APP_DASH_DATA_URL;
 
   useEffect(() => {
     axios
       .get(url)
       .then((res) => {
-        setdashData(res.data);
-        console.log("Dashboard Data fetched:", dashboardData);
+        if (res) {
+          setDashboardData(res.data);
+          console.log("Dashboard Data fetched:", res.data);
+        } else {
+          console.log("Dashboard Data not fetched:", res.data);
+        }
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [url]);
+
   return (
     <div className="container-fluid">
       <div className="row px-5">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex">
           <div className={styles.dashboardSection}>
             <div className={styles.dashboardData}>
-              {dashboardData.map((data) => (
+              {dashboardData.map((data, index) => (
                 <figure key={data.id}>
-                  <img src={icon1} alt="total-coins" id="icon" />
+                  <img
+                    src={images[data.image.replace("../assets/img/icons/", "")]}
+                    alt={data.name}
+                    id="icon"
+                    onError={(e) => {
+                      e.target.src = "../assets/img/icons/small_logo.ico";
+                    }} // Fallback image
+                  />
                   <p className={styles.dashboardTitle}>{data.name}</p>
                   <figcaption>{data.data}</figcaption>
                 </figure>

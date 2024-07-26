@@ -6,6 +6,10 @@ const fs = require("fs");
 const app = express();
 app.use(cors());
 
+const dataArray = getDataFromFile().dashboardData;
+const orderdataArray = getOrderDataFromFile().buyOrders;
+console.log("Dashboard Data read from file:", orderdataArray);
+
 // Add Dashboard Data from DashboardData.json
 function getDataFromFile() {
   try {
@@ -19,8 +23,17 @@ function getDataFromFile() {
   }
 }
 
-const dataArray = getDataFromFile().dashboardData;
-console.log("Dashboard Data read from file:", dataArray);
+function getOrderDataFromFile() {
+  try {
+    const rawData = fs.readFileSync("./src/dashboardData.json", "utf-8");
+    const orderdataArray = JSON.parse(rawData);
+    console.log(orderdataArray);
+    return orderdataArray;
+  } catch (error) {
+    console.error("Error reading dashboardData.json:", error.message);
+    return { orderdataArray: [] }; // Return an object with an empty tasks array if there's an error
+  }
+}
 
 // Init Middleware
 app.use(express.json());
@@ -35,37 +48,16 @@ app.get("/dashboardData", (req, res) => {
   }
 });
 
-const msg =
-  "API Running, Please Use Valid API Endpoint as per API Documentation and Request Method (GET, POST, PUT, DELETE, PATCH) to get valid response.";
+//get Buy Order data
 
-app.get("/*", (req, res) => {
-  res.send(msg);
-  res.status(200);
-});
-
-app.post("/*", (req, res) => {
-  res.send(msg);
-  res.status(200);
-});
-
-app.put("/*", (req, res) => {
-  res.send(msg);
-  res.status(200);
-});
-
-app.patch("/*", (req, res) => {
-  res.send(msg);
-  res.status(200);
-});
-
-app.delete("/*", (req, res) => {
-  res.send(msg);
-  res.status(200);
-});
-
-app.head("/*", (req, res) => {
-  res.send(msg);
-  res.status(200);
+app.get("/orderdata", (req, res) => {
+  if (orderdataArray) {
+    res.json(orderdataArray);
+    res.status(200);
+  } else {
+    res.json({ orderdataArray: [] });
+    res.status(404);
+  }
 });
 
 // Auth Routes
