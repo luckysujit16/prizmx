@@ -5,7 +5,7 @@ const P2pSell = () => {
   return (
     <div>
       <div className={styles.p2pDemandBox}>
-        <div className={styles.p2pBuyTitle}>P2P SELL</div>
+        <div className={styles.p2pBuyTitle}>P2P Sell</div>
 
         <div className={styles.p2prow}>
           <form className={styles.buyForm}>

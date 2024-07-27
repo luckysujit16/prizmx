@@ -21,7 +21,7 @@ const DashData = () => {
 
   useEffect(() => {
     axios
-      .get(url)
+      .get(`${url}/dashboardData`)
       .then((res) => {
         if (res) {
           setDashboardData(res.data);

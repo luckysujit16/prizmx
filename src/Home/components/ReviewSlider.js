@@ -2,7 +2,6 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./Carousel.module.css";
 import styles from "../home.module.css";
-import reviewV1 from "../assets/videos/review_russian.mp4";
 
 const ReviewSlider = () => {
   return (

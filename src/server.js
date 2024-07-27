@@ -48,7 +48,6 @@ app.get("/dashboardData", (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 //get Buy Order data
 
 app.get("/orderdata", (req, res) => {
@@ -60,9 +59,6 @@ app.get("/orderdata", (req, res) => {
     res.status(404);
   }
 });
-=======
-
->>>>>>> ace8e3205b7fa31db93f572750271c268bad777f
 
 // Auth Routes
 app.use("/api/auth", require("./Backend/auth"));

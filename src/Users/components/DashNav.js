@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
 import styles from "../assets/css/Dashboard.module.css";
 
-const Dash_nav = () => {
+const DashNav = () => {
   let navigate = useNavigate();
   const routeChange = (path) => {
     const { name, value } = path.target;
@@ -61,4 +61,4 @@ const Dash_nav = () => {
   );
 };
 
-export default Dash_nav;
+export default DashNav;

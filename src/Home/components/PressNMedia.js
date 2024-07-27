@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../home.module.css";
-import { Carousel } from "react-bootstrap";
 import ad1 from "../assets/img/news/ad1.jpg";
 import ad2 from "../assets/img/news/ad2.jpg";
 import ad3 from "../assets/img/news/ad3.jpg";
