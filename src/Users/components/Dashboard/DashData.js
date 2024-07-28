@@ -4,7 +4,7 @@ import styles from "../../assets/css/dashboard.module.css";
 
 // Function to dynamically import images
 const importAll = (r) => {
-  let images = {}; // eslint-disable-line
+  let images = {};
   r.keys().map((item, index) => {
     images[item.replace("./", "")] = r(item);
   });

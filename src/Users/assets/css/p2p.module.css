@@ -7,16 +7,35 @@
 
 .p2pHeader {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 80% 20%;
   gap: 1rem;
+  text-align: right;
 }
 
 .p2pTitle {
   font-size: 1rem;
   font-weight: 600;
   color: #767676;
-  text-align: center;
-  padding: 1.25rem;
+  text-align: left;
+  padding-top: 1.25rem;
+}
+
+.p2pCurrency {
+  padding-top: 1.25rem;
+}
+
+.currencyli {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-size: 0.8rem;
+  text-align: left;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.currencyDropMenuTitle {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .p2pOrderBookTitle {
@@ -111,6 +130,31 @@ button {
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
+
+  .p2pHeader {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 1rem;
+  }
+
+  .p2pTitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding-top: 1.5rem;
+  }
+
+  .p2pCurrency {
+    padding-top: 1rem;
+  }
+
+  .currencyDropMenuTitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .p2pCurrencyFlag {
+    padding-top: 1.5rem;
+  }
   .p2pDemandBox {
     width: 100%;
   }
@@ -144,6 +188,28 @@ button {
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
+
+  .p2pCurrencyFlag {
+    padding-top: 1.5rem;
+  }
+
+  .p2pHeader {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .p2pTitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding-top: 1.5rem;
+  }
+
+  .p2pCurrency {
+    padding-top: 1rem;
+  }
+
   .p2pDemandBox {
     width: 100%;
   }

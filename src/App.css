@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #7a00cc;
+}
+
+.dropdown-item {
+  background-color: #dedede98;
+  padding: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
