@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "../assets/css/p2p.module.css";
+import styles from "../../assets/css/p2p.module.css";
 
 const P2pDemand = () => {
   const [buyOrdersArray, setBuyOrdersArray] = useState([]);

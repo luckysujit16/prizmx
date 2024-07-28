@@ -4,56 +4,56 @@
       "id": 1,
       "name": "Total Supply",
       "description": "Total supply of PZMX coins",
-      "image": "../assets/img/icons/total-supply-1.png",
+      "image": "../../assets/img/icons/total-supply-1.png",
       "data": "21M"
     },
     {
       "id": 2,
       "name": "Coins To Be Mined",
       "description": "Coins remaining to be mined",
-      "image": "../assets/img/icons/coins-to-be-mined.png",
+      "image": "../../assets/img/icons/coins-to-be-mined.png",
       "data": "0"
     },
     {
       "id": 3,
       "name": "Coins Paramined",
       "description": "Coins paramined till date",
-      "image": "../assets/img/icons/coins-paramined-1.png",
+      "image": "../../assets/img/icons/coins-paramined-1.png",
       "data": "0"
     },
     {
       "id": 4,
       "name": "LIVE RATE",
       "description": "Last Traded Price",
-      "image": "../assets/img/icons/coin-holders-1.png",
+      "image": "../../assets/img/icons/coin-holders-1.png",
       "data": "1"
     },
     {
       "id": 5,
       "name": "Avg. Coins in Users Wallet",
       "description": "Average Users Wallet Balance",
-      "image": "../assets/img/icons/users-wallet-1.png",
+      "image": "../../assets/img/icons/users-wallet-1.png",
       "data": "0"
     },
     {
       "id": 6,
       "name": "Number Of Users",
       "description": "Total Users in Exchange",
-      "image": "../assets/img/icons/total-supply-1.png",
+      "image": "../../assets/img/icons/total-supply-1.png",
       "data": "150"
     },
     {
       "id": 7,
       "name": "P2P Demand in Exchange",
       "description": "BUY orders in P2p order book",
-      "image": "../assets/img/icons/demand-exchange-1.png",
+      "image": "../../assets/img/icons/demand-exchange-1.png",
       "data": "500"
     },
     {
       "id": 8,
       "name": "P2P Supply in Exchange",
       "description": "SELL orders in P2p order book",
-      "image": "../assets/img/icons/supply-exchange-1.png",
+      "image": "../../assets/img/icons/supply-exchange-1.png",
       "data": "250"
     }
   ],
@@ -99,6 +99,172 @@
       "userid": "manoj",
       "quantity": 5,
       "price": 21.0
+    }
+  ],
+
+  "countrywiseCurrencyData": [
+    {
+      "United States": {
+        "currencyName": "United States Dollar",
+        "currencySymbol": "$",
+        "currencyLogo": "USD"
+      },
+      "Eurozone": {
+        "currencyName": "Euro",
+        "currencySymbol": "€",
+        "currencyLogo": "EUR"
+      },
+      "United Kingdom": {
+        "currencyName": "Pound Sterling",
+        "currencySymbol": "£",
+        "currencyLogo": "GBP"
+      },
+      "Japan": {
+        "currencyName": "Japanese Yen",
+        "currencySymbol": "¥",
+        "currencyLogo": "JPY"
+      },
+      "Canada": {
+        "currencyName": "Canadian Dollar",
+        "currencySymbol": "$",
+        "currencyLogo": "CAD"
+      },
+      "Australia": {
+        "currencyName": "Australian Dollar",
+        "currencySymbol": "$",
+        "currencyLogo": "AUD"
+      },
+      "Switzerland": {
+        "currencyName": "Swiss Franc",
+        "currencySymbol": "CHF",
+        "currencyLogo": "CHF"
+      },
+      "China": {
+        "currencyName": "Chinese Yuan",
+        "currencySymbol": "¥",
+        "currencyLogo": "CNY"
+      },
+      "India": {
+        "currencyName": "Indian Rupee",
+        "currencySymbol": "₹",
+        "currencyLogo": "INR"
+      },
+      "Russia": {
+        "currencyName": "Russian Ruble",
+        "currencySymbol": "₽",
+        "currencyLogo": "RUB"
+      },
+      "Brazil": {
+        "currencyName": "Brazilian Real",
+        "currencySymbol": "R$",
+        "currencyLogo": "BRL"
+      },
+
+      "Mexico": {
+        "currencyName": "Mexican Peso",
+        "currencySymbol": "$",
+        "currencyLogo": "MXN"
+      },
+      "Singapore": {
+        "currencyName": "Singapore Dollar",
+        "currencySymbol": "$",
+        "currencyLogo": "SGD"
+      },
+      "Hong Kong": {
+        "currencyName": "Hong Kong Dollar",
+        "currencySymbol": "$",
+        "currencyLogo": "HKD"
+      },
+      "South Africa": {
+        "currencyName": "South African Rand",
+        "currencySymbol": "R",
+        "currencyLogo": "ZAR"
+      },
+      "Namibia": {
+        "currencyName": "Namibian Dollar",
+        "currencySymbol": "$",
+        "currencyLogo": "NAD"
+      },
+      "Lesotho": {
+        "currencyName": "Lesotho Loti",
+        "currencySymbol": "L",
+        "currencyLogo": "LSL"
+      },
+      "Eswatini": {
+        "currencyName": "Swazi Lilangeni",
+        "currencySymbol": "E",
+        "currencyLogo": "SZL"
+      },
+      "Saudi Arabia": {
+        "currencyName": "Saudi Riyal",
+        "currencySymbol": "ر.س",
+        "currencyLogo": "SAR"
+      },
+      "United Arab Emirates": {
+        "currencyName": "United Arab Emirates Dirham",
+        "currencySymbol": "د.إ",
+        "currencyLogo": "AED"
+      },
+      "Qatar": {
+        "currencyName": "Qatari Riyal",
+        "currencySymbol": "ر.ق",
+        "currencyLogo": "QAR"
+      },
+      "Kuwait": {
+        "currencyName": "Kuwaiti Dinar",
+        "currencySymbol": "د.ك",
+        "currencyLogo": "KWD"
+      },
+      "Oman": {
+        "currencyName": "Omani Rial",
+        "currencySymbol": "ر.ع.",
+        "currencyLogo": "OMR"
+      },
+      "Bahrain": {
+        "currencyName": "Bahraini Dinar",
+        "currencySymbol": "ب.د",
+        "currencyLogo": "BHD"
+      },
+      "Nepal": {
+        "currencyName": "Nepalese Rupee",
+        "currencySymbol": "₹",
+        "currencyLogo": "NPR"
+      },
+      "Sri Lanka": {
+        "currencyName": "Sri Lankan Rupee",
+        "currencySymbol": "Rs",
+        "currencyLogo": "LKR"
+      },
+      "Malta": {
+        "currencyName": "Euro",
+        "currencySymbol": "€",
+        "currencyLogo": "EUR"
+      },
+      "Iceland": {
+        "currencyName": "Icelandic Króna",
+        "currencySymbol": "kr",
+        "currencyLogo": "ISK"
+      },
+      "San Marino": {
+        "currencyName": "Euro",
+        "currencySymbol": "€",
+        "currencyLogo": "EUR"
+      },
+      "Liechtenstein": {
+        "currencyName": "Swiss Franc",
+        "currencySymbol": "CHF",
+        "currencyLogo": "CHF"
+      },
+      "Monaco": {
+        "currencyName": "Euro",
+        "currencySymbol": "€",
+        "currencyLogo": "EUR"
+      },
+      "Andorra": {
+        "currencyName": "Euro",
+        "currencySymbol": "€",
+        "currencyLogo": "EUR"
+      }
     }
   ]
 }

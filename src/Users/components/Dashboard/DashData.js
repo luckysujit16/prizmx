@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../assets/css/Dashboard.module.css";
+import styles from "../../assets/css/dashboard.module.css";
 
 // Function to dynamically import images
 const importAll = (r) => {
-  let images = {};
+  let images = {}; // eslint-disable-line
   r.keys().map((item, index) => {
     images[item.replace("./", "")] = r(item);
   });
@@ -12,11 +12,12 @@ const importAll = (r) => {
 };
 
 const images = importAll(
-  require.context("../assets/img/icons", false, /\.(png|jpe?g|svg)$/)
+  require.context("../../assets/img/icons", false, /\.(png|jpe?g|svg)$/)
 );
 
 const DashData = () => {
   const [dashboardData, setDashboardData] = useState([]);
+
   const url = process.env.REACT_APP_DASH_DATA_URL;
 
   useEffect(() => {
@@ -42,11 +43,13 @@ const DashData = () => {
               {dashboardData.map((data, index) => (
                 <figure key={data.id}>
                   <img
-                    src={images[data.image.replace("../assets/img/icons/", "")]}
+                    src={
+                      images[data.image.replace("../../assets/img/icons/", "")]
+                    }
                     alt={data.name}
                     id="icon"
                     onError={(e) => {
-                      e.target.src = "../assets/img/icons/small_logo.ico";
+                      e.target.src = "../../assets/img/icons/small_logo.ico";
                     }} // Fallback image
                   />
                   <p className={styles.dashboardTitle}>{data.name}</p>
