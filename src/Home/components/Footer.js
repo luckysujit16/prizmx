@@ -1,9 +1,10 @@
 // src/components/Footer.js
 import React from "react";
+import styles from "../home.module.css";
 
 const Footer = () => {
   return (
-    <footer className="footer fixed-bottom bg-dark text-light text-center text-lg-start mt-4">
+    <footer className={styles.footer}>
       <div className="text-center p-3">
         © 2024 Prizmx Crypto Exchange. All rights reserved.
       </div>

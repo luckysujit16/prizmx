@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #7a00cc;
+}
+
+.dropdown-item {
+  background-color: #dedede98;
+  padding: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -26,6 +35,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.error-img {
+  height: fit-content;
+}
+
+.button {
+  max-width: 150px;
+  background-color: #7a00cc;
+}
+
+.alice-carousel {
+  height: 150px;
+  margin: 0;
 }
 
 @keyframes App-logo-spin {

@@ -1,0 +1,13 @@
+/* src/components/Carousel.module.css */
+.carousel img {
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.carousel-control-prev {
+  display: none !important;
+}
+
+.carousel-control-next {
+  display: none !important;
+}
