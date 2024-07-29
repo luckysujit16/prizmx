@@ -25,7 +25,7 @@ const DashNav = () => {
 
   return (
     <div className="container-fluid ">
-      <div className="row d-flex px-5 my-3">
+      <div className="row d-flex px-3 my-3">
         <div className={styles.logoSection}>
           <img
             onClick={routeChange}
