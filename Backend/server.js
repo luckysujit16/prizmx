@@ -19,10 +19,10 @@ function readJsonFile(filePath) {
 }
 
 // Get dashboard data
-const dashboardData = readJsonFile("./dashboardData.json").dashboardData;
-const orderData = readJsonFile("./dashboardData.json").buyOrders;
+const dashboardData = readJsonFile("./data/dashboardData.json").dashboardData;
+const orderData = readJsonFile("./data/dashboardData.json").buyOrders;
 const currencyData = readJsonFile(
-  "./dashboardData.json"
+  "./data/dashboardData.json"
 ).countrywisecurrencydata;
 // Init Middleware
 app.use(express.json());
@@ -55,8 +55,8 @@ app.get("/currencydata", (req, res) => {
 });
 
 // Auth Routes
-app.use("/api/auth", require("./Backend/auth"));
-app.use("/api/kyc", require("./Backend/kyc"));
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/kyc", require("./routes/kyc"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
