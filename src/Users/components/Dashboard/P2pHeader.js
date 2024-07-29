@@ -35,7 +35,7 @@ const P2pHeader = () => {
                 aria-expanded="false"
               >
                 <span className={styles.currencyDropMenuTitle}>
-                  Select Fiat Currency
+                  Fiat Currency
                 </span>
               </button>
               <ul className="dropdown-menu">

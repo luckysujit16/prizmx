@@ -1,14 +1,14 @@
 .p2pContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
 }
 
 .p2pHeader {
   display: grid;
-  grid-template-columns: 80% 20%;
-  gap: 1rem;
+  grid-template-columns: 90% 10%;
+  gap: 0.8rem;
   text-align: right;
 }
 
@@ -34,8 +34,9 @@
 }
 
 .currencyDropMenuTitle {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 400;
+  text-wrap: wrap;
 }
 
 .flag img {
