@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../../assets/css/dashboard.module.css";
 
-
+import SiteUrl from "../../../config/config.json";
 // Function to dynamically import images
 const importAll = (r) => {
   let images = {};
-  r.keys().map((item, index) => {
+  r.keys().forEach((item) => {
     images[item.replace("./", "")] = r(item);
   });
   return images;
@@ -16,19 +16,18 @@ const images = importAll(
   require.context("../../assets/img/icons", false, /\.(png|jpe?g|svg)$/)
 );
 
+
 const DashData = () => {
   const [dashboardData, setDashboardData] = useState([]);
-
-  const url = process.env.REACT_APP_DASH_DATA_URL;
-  console.log(url);
+  const url = SiteUrl.SiteUrl;
 
   useEffect(() => {
     axios
-      .get(`${url}/dashboardData`)
+      .get(`${url}/dashboardata`)
       .then((res) => {
         if (res) {
           setDashboardData(res.data);
-          console.log("Dashboard Data fetched:", res.data);
+          console.log("Dashboard Prizmx Data fetched:", res.data);
         } else {
           console.log("Dashboard Data not fetched:", res.data);
         }

@@ -3,33 +3,29 @@ import styles from "../../assets/css/p2p.module.css";
 
 const P2pBuy = () => {
   return (
-    <div>
-      <div className={styles.p2pDemandBox}>
-        <div className={styles.p2pBuyTitle}>P2P Buy</div>
-
-        <div className={styles.p2prow}>
-          <form className={styles.buyForm}>
-            <div className={styles.buyFormRow}>
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Enter Qunatity"
-                aria-label="Qnt"
-              />
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Enter Price"
-                aria-label="Qnt"
-              />
-            </div>
-            <div className="row p-3">
-              <button type="button">PLACE P2P BUY ORDER</button>
-            </div>
-          </form>
-        </div>
+    <>
+      <div className={styles.p2prow}>
+        <form className={styles.buyForm}>
+          <div className={styles.buyFormRow}>
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Enter Qunatity"
+              aria-label="Qnt"
+            />
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Enter Price"
+              aria-label="Qnt"
+            />
+          </div>
+          <div className="row p-3">
+            <button type="button">PLACE P2P BUY ORDER</button>
+          </div>
+        </form>
       </div>
-    </div>
+    </>
   );
 };
 

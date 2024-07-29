@@ -1,58 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../../Users/assets/css/p2p.module.css";
+import axios from "axios";
+import SiteUrl from "../../../config/config.json";
 
 const P2pHeader = () => {
+  const [currData, setCurrData] = useState([]);
+  const url = SiteUrl.SiteUrl;
+
+  useEffect(() => {
+    axios
+      .get(`${url}/currencydata`)
+      .then((res) => {
+        if (res) {
+          setCurrData(Object.values(res.data[0]));
+          console.log("Currency Data fetched:", currData);
+        } else {
+          console.log("Currency Data not fetched:", res.data);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, [url]);
+
   return (
     <div className="container-fluid">
       <div className="row px-4 pb-3">
         <div className={styles.p2pHeader}>
           <div className={styles.p2pTitle}>P2P Order Book</div>
           <div className={styles.p2pCurrency}>
-            {/* Example single danger button */}
-            <div class="btn-group">
+            <div className="dropdown">
               <button
                 type="button"
-                class="btn border-1 dropdown-toggle fs-6"
+                className="btn border-1 dropdown-toggle fs-6"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 <span className={styles.currencyDropMenuTitle}>
-                  Select Fiat Currency
+                  Fiat Currency
                 </span>
               </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <div className={styles.currencyli}>
-                      <div>INR</div>
-                      <div>Flag</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <div className={styles.currencyli}>
-                      <div>RUBLE</div>
-                      <div>Flag</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <div className={styles.currencyli}>
-                      <div>POND</div>
-                      <div>Flag</div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <div className={styles.currencyli}>
-                      <div>USD</div>
-                      <div>Flag</div>
-                    </div>
-                  </a>
-                </li>
+              <ul className="dropdown-menu">
+                {currData.map((c, index) => (
+                  <li key={index}>
+                    <a className="dropdown-item text-wrap" href="#">
+                      <div className={styles.currencyli}>
+                        <div>{c.currencyLogo}</div>
+                        <div className={styles.flag}>
+                          <img src={c.flagUrl} />
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

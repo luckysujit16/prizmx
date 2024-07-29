@@ -1,5 +1,6 @@
 // src/components/Header.js
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "../home.module.css";
 import logodark from "../assets/img/logo/dark-logo.png";
 
@@ -36,24 +37,24 @@ const Header = () => {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                   <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <Link to="/" className="nav-link">
                       PrizmX
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/about">
+                    <Link to="/about" className="nav-link">
                       P2P
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/contact">
+                    <Link to="/contact" className="nav-link">
                       Blockchain
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/register">
+                    <Link to="/register" className="nav-link">
                       Register
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

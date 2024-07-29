@@ -5,8 +5,8 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const { check, validationResult } = require('express-validator');
 const nodemailer = require("nodemailer");
-const pool = require('../../db/connection');
-const auth = require('../../middleware/auth');
+const pool = require('../db/connection');
+const auth = require('../middleware/auth');
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {

@@ -5,9 +5,9 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const { check, validationResult } = require('express-validator');
 const nodemailer = require("nodemailer");
-const pool = require('../../db/connection');
-const auth = require('../../middleware/auth');
-const KycController = require('./controllers/KycController');
+const pool = require('../db/connection');
+const auth = require('../middleware/auth');
+const KycController = require('../controllers/KycController');
 
 const sumsubKycToken = process.env.SUMSUB_KYC_TOKEN;
 const sumsubKycSecretKey = process.env.SUMSUB_KYC_SECRET_KEY;
