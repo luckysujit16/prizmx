@@ -11,6 +11,11 @@
   --bs-dropdown-link-active-bg: #7a00cc;
 }
 
+.dropdown-menu.show {
+  display: block;
+  width: -webkit-fill-available;
+}
+
 .dropdown-item {
   background-color: #dedede98;
   padding: 0;

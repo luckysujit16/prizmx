@@ -39,7 +39,7 @@ const DashNav = () => {
           <form className={styles.searchForm}>
             <input
               type="search"
-              class="form-control"
+              className="form-control"
               placeholder="Search..."
               aria-label="Search"
             />

@@ -12,13 +12,13 @@ const P2pSell = () => {
             <div className={styles.buyFormRow}>
               <input
                 type="number"
-                class="form-control"
+                className="form-control"
                 placeholder="Enter Qunatity"
                 aria-label="Qnt"
               />
               <input
                 type="number"
-                class="form-control"
+                className="form-control"
                 placeholder="Enter Price"
                 aria-label="Qnt"
               />

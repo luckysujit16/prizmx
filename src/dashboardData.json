@@ -102,168 +102,86 @@
     }
   ],
 
-  "countrywiseCurrencyData": [
+  "countrywisecurrencydata": [
     {
+      "India": {
+        "currencyName": "Indian Rupee",
+        "currencySymbol": "₹",
+        "currencyLogo": "INR",
+        "flagUrl": "https://flagcdn.com/in.svg"
+      },
       "United States": {
         "currencyName": "United States Dollar",
         "currencySymbol": "$",
-        "currencyLogo": "USD"
+        "currencyLogo": "USD",
+        "flagUrl": "https://flagcdn.com/us.svg"
       },
       "Eurozone": {
         "currencyName": "Euro",
         "currencySymbol": "€",
-        "currencyLogo": "EUR"
+        "currencyLogo": "EUR",
+        "flagUrl": "https://flagcdn.com/eu.svg"
       },
       "United Kingdom": {
         "currencyName": "Pound Sterling",
         "currencySymbol": "£",
-        "currencyLogo": "GBP"
+        "currencyLogo": "GBP",
+        "flagUrl": "https://flagcdn.com/gb.svg"
       },
       "Japan": {
         "currencyName": "Japanese Yen",
         "currencySymbol": "¥",
-        "currencyLogo": "JPY"
+        "currencyLogo": "JPY",
+        "flagUrl": "https://flagcdn.com/jp.svg"
       },
       "Canada": {
         "currencyName": "Canadian Dollar",
         "currencySymbol": "$",
-        "currencyLogo": "CAD"
+        "currencyLogo": "CAD",
+        "flagUrl": "https://flagcdn.com/ca.svg"
       },
       "Australia": {
         "currencyName": "Australian Dollar",
         "currencySymbol": "$",
-        "currencyLogo": "AUD"
+        "currencyLogo": "AUD",
+        "flagUrl": "https://flagcdn.com/au.svg"
       },
       "Switzerland": {
         "currencyName": "Swiss Franc",
         "currencySymbol": "CHF",
-        "currencyLogo": "CHF"
+        "currencyLogo": "CHF",
+        "flagUrl": "https://flagcdn.com/ch.svg"
       },
       "China": {
         "currencyName": "Chinese Yuan",
         "currencySymbol": "¥",
-        "currencyLogo": "CNY"
+        "currencyLogo": "CNY",
+        "flagUrl": "https://flagcdn.com/cn.svg"
       },
-      "India": {
-        "currencyName": "Indian Rupee",
-        "currencySymbol": "₹",
-        "currencyLogo": "INR"
-      },
+
       "Russia": {
         "currencyName": "Russian Ruble",
         "currencySymbol": "₽",
-        "currencyLogo": "RUB"
+        "currencyLogo": "RUB",
+        "flagUrl": "https://flagcdn.com/ru.svg"
       },
       "Brazil": {
         "currencyName": "Brazilian Real",
         "currencySymbol": "R$",
-        "currencyLogo": "BRL"
-      },
-
-      "Mexico": {
-        "currencyName": "Mexican Peso",
-        "currencySymbol": "$",
-        "currencyLogo": "MXN"
-      },
-      "Singapore": {
-        "currencyName": "Singapore Dollar",
-        "currencySymbol": "$",
-        "currencyLogo": "SGD"
-      },
-      "Hong Kong": {
-        "currencyName": "Hong Kong Dollar",
-        "currencySymbol": "$",
-        "currencyLogo": "HKD"
+        "currencyLogo": "BRL",
+        "flagUrl": "https://flagcdn.com/us.svg"
       },
       "South Africa": {
         "currencyName": "South African Rand",
         "currencySymbol": "R",
-        "currencyLogo": "ZAR"
+        "currencyLogo": "ZAR",
+        "flagUrl": "https://flagcdn.com/us.svg"
       },
       "Namibia": {
         "currencyName": "Namibian Dollar",
         "currencySymbol": "$",
-        "currencyLogo": "NAD"
-      },
-      "Lesotho": {
-        "currencyName": "Lesotho Loti",
-        "currencySymbol": "L",
-        "currencyLogo": "LSL"
-      },
-      "Eswatini": {
-        "currencyName": "Swazi Lilangeni",
-        "currencySymbol": "E",
-        "currencyLogo": "SZL"
-      },
-      "Saudi Arabia": {
-        "currencyName": "Saudi Riyal",
-        "currencySymbol": "ر.س",
-        "currencyLogo": "SAR"
-      },
-      "United Arab Emirates": {
-        "currencyName": "United Arab Emirates Dirham",
-        "currencySymbol": "د.إ",
-        "currencyLogo": "AED"
-      },
-      "Qatar": {
-        "currencyName": "Qatari Riyal",
-        "currencySymbol": "ر.ق",
-        "currencyLogo": "QAR"
-      },
-      "Kuwait": {
-        "currencyName": "Kuwaiti Dinar",
-        "currencySymbol": "د.ك",
-        "currencyLogo": "KWD"
-      },
-      "Oman": {
-        "currencyName": "Omani Rial",
-        "currencySymbol": "ر.ع.",
-        "currencyLogo": "OMR"
-      },
-      "Bahrain": {
-        "currencyName": "Bahraini Dinar",
-        "currencySymbol": "ب.د",
-        "currencyLogo": "BHD"
-      },
-      "Nepal": {
-        "currencyName": "Nepalese Rupee",
-        "currencySymbol": "₹",
-        "currencyLogo": "NPR"
-      },
-      "Sri Lanka": {
-        "currencyName": "Sri Lankan Rupee",
-        "currencySymbol": "Rs",
-        "currencyLogo": "LKR"
-      },
-      "Malta": {
-        "currencyName": "Euro",
-        "currencySymbol": "€",
-        "currencyLogo": "EUR"
-      },
-      "Iceland": {
-        "currencyName": "Icelandic Króna",
-        "currencySymbol": "kr",
-        "currencyLogo": "ISK"
-      },
-      "San Marino": {
-        "currencyName": "Euro",
-        "currencySymbol": "€",
-        "currencyLogo": "EUR"
-      },
-      "Liechtenstein": {
-        "currencyName": "Swiss Franc",
-        "currencySymbol": "CHF",
-        "currencyLogo": "CHF"
-      },
-      "Monaco": {
-        "currencyName": "Euro",
-        "currencySymbol": "€",
-        "currencyLogo": "EUR"
-      },
-      "Andorra": {
-        "currencyName": "Euro",
-        "currencySymbol": "€",
-        "currencyLogo": "EUR"
+        "currencyLogo": "NAD",
+        "flagUrl": "https://flagcdn.com/us.svg"
       }
     }
   ]

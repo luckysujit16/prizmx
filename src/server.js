@@ -6,58 +6,51 @@ const fs = require("fs");
 const app = express();
 app.use(cors());
 
-const dataArray = getDataFromFile().dashboardData;
-const orderdataArray = getOrderDataFromFile().buyOrders;
-console.log("Dashboard Data read from file:", orderdataArray);
-
-// Add Dashboard Data from DashboardData.json
-function getDataFromFile() {
+// Helper function to read JSON file
+function readJsonFile(filePath) {
   try {
-    const rawData = fs.readFileSync("./dashboardData.json", "utf-8");
-    const dashboardData = JSON.parse(rawData);
-    // console.log(dashboardData);
-    return dashboardData;
+    const absolutePath = path.resolve(__dirname, filePath);
+    const rawData = fs.readFileSync(absolutePath, "utf-8");
+    return JSON.parse(rawData);
   } catch (error) {
-    console.error("Error reading dashboardData.json:", error.message);
-    return { dashboardData: [] }; // Return an object with an empty tasks array if there's an error
+    console.error(`Error reading ${filePath}:`, error.message);
+    return { data: [] }; // Return an object with an empty array if there's an error
   }
 }
 
-// Dummy Buy Sell Order Data for Dashboard
-function getOrderDataFromFile() {
-  try {
-    const rawData = fs.readFileSync("./dashboardData.json", "utf-8");
-    const orderdataArray = JSON.parse(rawData);
-    console.log(orderdataArray);
-    return orderdataArray;
-  } catch (error) {
-    console.error("Error reading dashboardData.json:", error.message);
-    return { orderdataArray: [] }; // Return an object with an empty tasks array if there's an error
-  }
-}
-
+// Get dashboard data
+const dashboardData = readJsonFile("./dashboardData.json").dashboardData;
+const orderData = readJsonFile("./dashboardData.json").buyOrders;
+const currencyData = readJsonFile(
+  "./dashboardData.json"
+).countrywisecurrencydata;
 // Init Middleware
 app.use(express.json());
 
-app.get("/dashboardData", (req, res) => {
-  if (dataArray) {
-    res.json(dataArray);
-    res.status(200);
+//Prizmx Dashboard Data Route
+app.get("/dashboardata", (req, res) => {
+  if (dashboardData) {
+    res.status(200).json(dashboardData);
   } else {
-    res.json({ dashboardData: [] });
-    res.status(404);
+    res.status(404).json({ dashboardData: [] });
   }
 });
 
-//get Buy Order data
-
+//Orders Data
 app.get("/orderdata", (req, res) => {
-  if (orderdataArray) {
-    res.json(orderdataArray);
-    res.status(200);
+  if (orderData) {
+    res.status(200).json(orderData);
   } else {
-    res.json({ orderdataArray: [] });
-    res.status(404);
+    res.status(404).json({ orderData: [] });
+  }
+});
+
+//Currency Data
+app.get("/currencydata", (req, res) => {
+  if (currencyData) {
+    res.status(200).json(currencyData);
+  } else {
+    res.status(404).json({ currencyData: [] });
   }
 });
 
@@ -66,5 +59,4 @@ app.use("/api/auth", require("./Backend/auth"));
 app.use("/api/kyc", require("./Backend/kyc"));
 
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

@@ -26,7 +26,7 @@
 
 .currencyli {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 30% 70%;
   font-size: 0.8rem;
   text-align: left;
   padding: 5px;
@@ -36,6 +36,10 @@
 .currencyDropMenuTitle {
   font-size: 1rem;
   font-weight: 400;
+}
+
+.flag img {
+  width: 30px;
 }
 
 .p2pOrderBookTitle {

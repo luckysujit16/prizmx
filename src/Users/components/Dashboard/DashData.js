@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../assets/css/Dashboard.module.css";
-import SiteUrl from '../../config/config.json';
+import styles from "../../assets/css/dashboard.module.css";
+import SiteUrl from "../../../config/config.json";
 // Function to dynamically import images
 const importAll = (r) => {
   let images = {};
@@ -21,11 +21,11 @@ const DashData = () => {
 
   useEffect(() => {
     axios
-      .get(`${url}/dashboardData`)
+      .get(`${url}/dashboardata`)
       .then((res) => {
         if (res) {
           setDashboardData(res.data);
-          console.log("Dashboard Data fetched:", res.data);
+          console.log("Dashboard Prizmx Data fetched:", res.data);
         } else {
           console.log("Dashboard Data not fetched:", res.data);
         }
