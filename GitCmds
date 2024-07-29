@@ -1,0 +1,2 @@
+// Unstage unwanted folder or files
+git restore --staged <pathspec> 
