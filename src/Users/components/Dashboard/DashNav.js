@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
-import styles from "../assets/css/Dashboard.module.css";
+import imgLogo from "../../../Home/assets/img/logo/dark-logo.png";
+import styles from "../../assets/css/dashboard.module.css";
 
 const DashNav = () => {
   let navigate = useNavigate();
@@ -53,7 +53,7 @@ const DashNav = () => {
             type="button"
             className={styles.menuButton}
           >
-            P2P PZMX
+            SWAP CRYPTO TO USD
           </button>
         </div>
       </div>

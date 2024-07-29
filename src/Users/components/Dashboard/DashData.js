@@ -12,7 +12,7 @@ const importAll = (r) => {
 };
 
 const images = importAll(
-  require.context("../assets/img/icons", false, /\.(png|jpe?g|svg)$/)
+  require.context("../../assets/img/icons", false, /\.(png|jpe?g|svg)$/)
 );
 
 const DashData = () => {
@@ -42,11 +42,13 @@ const DashData = () => {
               {dashboardData.map((data, index) => (
                 <figure key={data.id}>
                   <img
-                    src={images[data.image.replace("../assets/img/icons/", "")]}
+                    src={
+                      images[data.image.replace("../../assets/img/icons/", "")]
+                    }
                     alt={data.name}
                     id="icon"
                     onError={(e) => {
-                      e.target.src = "../assets/img/icons/small_logo.ico";
+                      e.target.src = "../../assets/img/icons/small_logo.ico";
                     }} // Fallback image
                   />
                   <p className={styles.dashboardTitle}>{data.name}</p>
