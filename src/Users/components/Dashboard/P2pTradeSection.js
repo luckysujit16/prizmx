@@ -20,19 +20,6 @@ const P2pTradeSection = () => {
       <div className="container-fluid">
         {screenWidth < 768 && (
           <div className={screenWidth < 768 ? "large-screen" : "small-screen"}>
-            {/* <div className="row mx-2 my-3">
-              <div className={styles.swapButton}>
-                <button
-                  onClick={routeChange}
-                  name="Registration"
-                  value="register"
-                  type="button"
-                  className={styles.menuButton}
-                >
-                  SWAP CRYPTO TO PZMX
-                </button>
-              </div>
-            </div> */}
             <SmallScreenButton />
           </div>
         )}

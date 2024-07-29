@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "../../assets/css/p2p.module.css";
-<<<<<<< HEAD
-import SiteUrl from '../../../config/config.json';
-=======
 import SiteUrl from "../../../config/config.json";
 
->>>>>>> bb48ec79b1551df2d3ce4e6a753b859c4c8b1407
 const P2pDemand = () => {
   const [buyOrdersArray, setBuyOrdersArray] = useState([]);
   const url = SiteUrl.SiteUrl;

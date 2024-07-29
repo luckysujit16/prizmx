@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../../assets/css/dashboard.module.css";
-<<<<<<< HEAD
-import SiteUrl from '../../../config/config.json';
-=======
 import SiteUrl from "../../../config/config.json";
->>>>>>> bb48ec79b1551df2d3ce4e6a753b859c4c8b1407
 // Function to dynamically import images
 const importAll = (r) => {
   let images = {};
