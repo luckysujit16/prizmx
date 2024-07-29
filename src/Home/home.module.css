@@ -29,16 +29,10 @@
 }
 
 .headerButton {
-<<<<<<< HEAD
-  background-color: #7c00cd; /* Purple */
-  min-width: 150px;
-  max-width: 250px;
-=======
   background-color: #7a00cc;
   /* Purple */
   min-width: 150px;
   max-width: 200px;
->>>>>>> a49520ce574f3c1dea3baf572f242a6c5e70c142
   color: #fff;
   font-size: large;
   font-weight: 600;
