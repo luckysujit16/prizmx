@@ -69,4 +69,8 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.get("/", async () =>{
+  console.log("welcome to Mongoos server")
+})
+
 module.exports = router;

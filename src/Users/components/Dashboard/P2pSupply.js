@@ -1,12 +1,16 @@
 import React from "react";
 import axios from "axios";
-import styles from "../../assets/css/p2p.module.css";
-import { useEffect, useState } from "react";
+import styles from "../assets/css/p2p.module.css";
+import SiteUrl from '../../config/config.json';
+
 
 const P2pSupply = () => {
   const [buyOrdersArray, setBuyOrdersArray] = useState([]);
 
-  const url = process.env.REACT_APP_DASH_DATA_URL;
+  const url = SiteUrl.SiteUrl;
+
+;
+
 
   useEffect(() => {
     axios

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../../assets/css/dashboard.module.css";
-
+import styles from "../assets/css/Dashboard.module.css";
+import SiteUrl from '../../config/config.json';
 // Function to dynamically import images
 const importAll = (r) => {
   let images = {};
@@ -17,8 +17,7 @@ const images = importAll(
 
 const DashData = () => {
   const [dashboardData, setDashboardData] = useState([]);
-
-  const url = process.env.REACT_APP_DASH_DATA_URL;
+  const url = SiteUrl.SiteUrl;
 
   useEffect(() => {
     axios

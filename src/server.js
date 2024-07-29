@@ -13,7 +13,7 @@ console.log("Dashboard Data read from file:", orderdataArray);
 // Add Dashboard Data from DashboardData.json
 function getDataFromFile() {
   try {
-    const rawData = fs.readFileSync("./src/dashboardData.json", "utf-8");
+    const rawData = fs.readFileSync("./dashboardData.json", "utf-8");
     const dashboardData = JSON.parse(rawData);
     // console.log(dashboardData);
     return dashboardData;
@@ -26,7 +26,7 @@ function getDataFromFile() {
 // Dummy Buy Sell Order Data for Dashboard
 function getOrderDataFromFile() {
   try {
-    const rawData = fs.readFileSync("./src/dashboardData.json", "utf-8");
+    const rawData = fs.readFileSync("./dashboardData.json", "utf-8");
     const orderdataArray = JSON.parse(rawData);
     console.log(orderdataArray);
     return orderdataArray;
