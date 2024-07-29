@@ -1,12 +1,34 @@
+.dashheader {
+  display: grid;
+  grid-template-columns: 60% auto auto auto;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+}
 .logoSection {
-  width: 60%;
+  /* width: 60%; */
   padding-top: 1rem;
 }
 
 .menuSection {
-  width: 20%;
+  /* width: 100%; */
   padding-top: 1rem;
   text-align: end;
+}
+
+.navSection {
+  /* width: 20%; */
+  padding-top: 1rem;
+  text-align: end;
+}
+
+.profileSection {
+  /* width: 20%; */
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #7a00cc;
 }
 
 .imgLogo {
@@ -17,6 +39,17 @@
 
 .menuButton {
   max-width: 200px;
+}
+
+.swapButton {
+  padding: 1rem;
+}
+
+.twoBoxgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  text-align: center;
 }
 
 .container {
@@ -68,20 +101,16 @@ figcaption {
   padding-top: 0.5rem;
 }
 
-.navSection {
-  width: 20%;
-  padding-top: 1rem;
-  text-align: end;
-}
-
 .searchForm {
   border: 1px solid #cfcfcf;
   border-radius: 6px;
 }
 
 @media only screen and (max-width: 1024px) {
+  .dashheader {
+    grid-template-columns: 20% auto auto auto;
+  }
   .logoSection {
-    width: 20%;
     text-align: center;
     background-image: url(../img/icons/small_logo.ico);
     background-size: 50px;
@@ -94,14 +123,14 @@ figcaption {
   }
 
   .menuSection {
-    width: 20%;
-    text-align: center;
+    display: none;
   }
 
   .menuButton {
     width: auto;
     font-size: 0.75rem;
     font-weight: 600;
+    width: -webkit-fill-available;
   }
 
   .dashboardSection {
@@ -129,7 +158,6 @@ figcaption {
   }
 
   .navSection {
-    width: 60%;
     padding-top: 1rem;
     text-align: end;
   }
@@ -141,22 +169,20 @@ figcaption {
 }
 
 @media only screen and (max-width: 769px) {
+  .dashheader {
+    grid-template-columns: 10% auto 10%;
+  }
+
   .logoSection {
-    width: 20%;
     text-align: center;
     background-image: url(../img/icons/small_logo.ico);
-    background-size: 50px;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .imgLogo {
     display: none;
-  }
-
-  .menuSection {
-    width: 20%;
-    text-align: center;
   }
 
   .menuButton {
@@ -190,7 +216,6 @@ figcaption {
   }
 
   .navSection {
-    width: 60%;
     padding-top: 1rem;
     text-align: end;
   }

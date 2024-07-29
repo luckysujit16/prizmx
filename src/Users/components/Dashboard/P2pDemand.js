@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "../../assets/css/p2p.module.css";
+<<<<<<< HEAD
 import SiteUrl from '../../../config/config.json';
+=======
+import SiteUrl from "../../../config/config.json";
+
+>>>>>>> bb48ec79b1551df2d3ce4e6a753b859c4c8b1407
 const P2pDemand = () => {
   const [buyOrdersArray, setBuyOrdersArray] = useState([]);
-
   const url = SiteUrl.SiteUrl;
+  // console.log(url);
 
   useEffect(() => {
     axios
@@ -15,7 +20,7 @@ const P2pDemand = () => {
           setBuyOrdersArray(res.data);
           console.log("Buy Orders Data fetched:", res.data);
         } else {
-          console.log("Dashboard Data not fetched:", res.data);
+          console.log("Dashboard Buy Order Data not fetched:", res.data);
         }
       })
       .catch((err) => console.log(err));

@@ -1,11 +1,13 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-// import PrivateRoute from "../routes/PrivateRouter";
 import Index from "../Home/Index";
 import E404 from "../E404";
 import Register from "../Frontend/pages/Register";
 import Verify from "../Frontend/pages/Verify";
 import Login from "../Frontend/pages/Login";
 import Dashboard from "../Users/pages/Dashboard";
+import Wallet from "../Users/pages/Wallet";
+import Profile from "../Users/pages/Profile";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -30,8 +32,22 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/dashboard",
-    element: <Dashboard />,
+    path: "/user",
+    element: <PrivateRoutes />,
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "/user/transactions",
+        element: <Wallet />,
+      },
+      {
+        path: "/user/profile",
+        element: <Profile />,
+      },
+    ],
   },
 ]);
 

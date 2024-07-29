@@ -41,7 +41,7 @@ const Verify = () => {
         navigate("/");
         break;
       case "dashboard":
-        navigate("/dashboard");
+        navigate("/user");
         break;
       default:
         navigate("/");
