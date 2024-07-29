@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../assets/css/Dashboard.module.css";
-import SiteUrl from '../../config/config.json';
+import styles from "../../assets/css/dashboard.module.css";
+import SiteUrl from '../../../config/config.json';
 // Function to dynamically import images
 const importAll = (r) => {
   let images = {};
-  r.keys().map((item, index) => {
+  r.keys().forEach((item) => {
     images[item.replace("./", "")] = r(item);
   });
   return images;
@@ -14,6 +14,7 @@ const importAll = (r) => {
 const images = importAll(
   require.context("../../assets/img/icons", false, /\.(png|jpe?g|svg)$/)
 );
+
 
 const DashData = () => {
   const [dashboardData, setDashboardData] = useState([]);
