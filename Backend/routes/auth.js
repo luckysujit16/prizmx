@@ -7,6 +7,8 @@ const { check, validationResult } = require('express-validator');
 const nodemailer = require("nodemailer");
 const pool = require('../db/connection');
 const auth = require('../middleware/auth');
+const crypto = require('crypto');
+
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -15,12 +17,13 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-const sendVerificationEmail = async (email, verificationCode) => {
+const sendVerificationEmail = async (email, subject, textMessage, htmlMessage='') => {
     const mailOptions = {
         from: process.env.EMAIL_USER,
         to: email,
-        subject: "Email Verification",
-        text: `Your verification code is: ${verificationCode}`,
+        subject: subject,
+        text: textMessage,
+        html: htmlMessage,
     };
     try {
         await transporter.sendMail(mailOptions);
@@ -29,6 +32,22 @@ const sendVerificationEmail = async (email, verificationCode) => {
         return false;
     }
 };
+
+// @route    GET api/auth
+// @desc     Get User
+// @access   Private
+router.get('/', auth, async (req, res) => {
+    try {
+        const [userRows] = await pool.query('SELECT name, email, referral_id, created_on FROM crmbux_users WHERE user_id = ?', [req.user.user_id]);
+        if (userRows.length === 0) {
+            return res.status(400).json({ errors: [{ msg: 'User not found' }] });
+        }
+        res.json(userRows[0]);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
 
 // @route    POST api/auth/signup
 // @desc     Register user
@@ -39,23 +58,25 @@ router.post(
         check('name', 'Name is required').notEmpty(),
         check('email', 'Please include a valid email').isEmail(),
         check('password', 'Please enter a password with 6 or more characters').isLength({ min: 6 }),
-        check('referred_by', 'Referral is required').notEmpty(),
+        check('referred_by', 'Referral is required').notEmpty()
     ],
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        const { name, email, password, referred_by } = req.body;
-        try {
 
+        const { name, email, password, referred_by } = req.body;
+
+        try {
             const [userRows] = await pool.query('SELECT * FROM pzmx_users WHERE email = ?', [email]);
             if (userRows.length > 0) {
                 return res.status(400).json({ errors: [{ msg: 'User already exists' }] });
             }
-            const [userRefRows] = await pool.query('SELECT * FROM pzmx_users WHERE referred_by = ?', [referred_by]);
-            if (userRefRows.length === 0) {
-                return res.status(400).json({ errors: [{ msg: 'Referral does not exists' }] });
+
+            const [referrerRows] = await pool.query('SELECT * FROM pzmx_users WHERE referral_id = ?', [referred_by]);
+            if (referrerRows.length === 0) {
+                return res.status(400).json({ errors: [{ msg: 'Referral does not exist' }] });
             }
 
             const salt = await bcrypt.genSalt(10);
@@ -70,11 +91,19 @@ router.post(
                 'INSERT INTO pzmx_users (name, email, password, referral_id, referred_by, otp) VALUES (?, ?, ?, ?, ?, ?)',
                 [name, email, hashedPassword, referralID, referred_by, otp]
             );
-            sendVerificationEmail(email, otp);
-            res.json({ status: "OK" });
+
+            const message = `Your verification code is: ${otp}`;
+            const subject = 'Email Verification';
+            const emailSent = await sendVerificationEmail(email, subject, message);
+
+            if (!emailSent) {
+                return res.status(500).json({ errors: [{ msg: 'Failed to send verification email' }] });
+            }
+
+            res.json({ status: 'OK' });
         } catch (err) {
             console.error(err.message);
-            return res.status(500).json({ errors: [{ msg: err.message }] });
+            return res.status(500).json({ errors: [{ msg: 'Server error' }] });
         }
     }
 );
@@ -82,7 +111,6 @@ router.post(
 // @route    POST api/auth
 // @desc     Authenticate user & get token
 // @access   Public
-
 router.post(
     '/',
     [
@@ -110,9 +138,29 @@ router.post(
             if (!isMatch) {
                 return res.status(400).json({ errors: [{ msg: 'Invalid Password' }] });
             }
-            if(!user.is_active){
-                return res.status(400).json({ errors: [{ msg: 'Your account is deactivated please contact support!' }] });
+
+            // Check if the account is active
+            if (!user.is_active) {
+                return res.status(400).json({ errors: [{ msg: 'Your account is deactivated, please contact support!' }] });
             }
+
+            // Check if the email is verified
+            if (!user.is_verified) {
+                const otp = Math.floor(100000 + Math.random() * 900000);
+                const message = `Your verification code is: ${otp}`;
+                const subject = 'Email Verification';
+
+                const emailSent = await sendVerificationEmail(email, subject, message);
+                if (!emailSent) {
+                    return res.status(500).json({ errors: [{ msg: 'Failed to send verification email' }] });
+                }
+
+                // Save OTP to the database for later verification (you might need a new column for this in your users table)
+                await pool.query('UPDATE pzmx_users SET otp = ? WHERE email = ?', [otp, email]);
+
+                return res.status(400).json({ errors: [{ msg: 'Please verify your email address!' }] });
+            }
+
             // Create the JWT payload
             const payload = {
                 user: {
@@ -120,7 +168,7 @@ router.post(
                     email: email
                 }
             };
-           
+
             // Sign the JWT token
             jwt.sign(
                 payload,
@@ -141,7 +189,6 @@ router.post(
 // @route    POST api/auth/email-verification
 // @desc     Verify User Email Address
 // @access   Public
-
 router.post(
     '/email-verification',
     [
@@ -156,14 +203,14 @@ router.post(
         const { otp } = req.body;
 
         try {
-            const [userRow] = await pool.query('SELECT * FROM pzmx_users WHERE otp = ?', [otp]);
-            if (userRow.length === 0) {
+            const [userRows] = await pool.query('SELECT * FROM pzmx_users WHERE otp = ?', [otp]);
+            if (userRows.length === 0) {
                 return res.status(400).json({ errors: [{ msg: 'Invalid Otp' }] });
             }
 
-            const user = userRow[0];
+            const user = userRows[0];
 
-            await pool.query('UPDATE pzmx_users SET otp = null, is_verified = 1 WHERE otp = ?', [otp]);
+            await pool.query('UPDATE pzmx_users SET otp = NULL, is_verified = 1 WHERE otp = ?', [otp]);
 
             const payload = {
                 user: {
@@ -183,10 +230,89 @@ router.post(
                 }
             );
         } catch (err) {
+            console.error(err.message);
+            return res.status(500).json({ errors: [{ msg: 'Server Error' }] });
+        }
+    }
+);
+
+// @route    POST api/auth/forgot-password-send-email
+// @desc     Forgot password send token email
+// @access   Public
+router.post(
+    '/forgot-password-send-email',
+    [
+        check('email', 'Please enter a valid email').isEmail()
+    ],
+    async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
+        const { email } = req.body;
+
+        try {
+            const [userRow] = await pool.query('SELECT * FROM pzmx_users WHERE email = ?', [email]);
+
+            if (userRow.length === 0) {
+                return res.status(400).json({ errors: [{ msg: 'Email not found' }] });
+            }
+
+            const token = crypto.randomBytes(32).toString('hex');
+            const resetLink = `https://prizmxchange.com/reset-password?token=${token}`;
+            const textMessage = `You requested a password reset. Click the link to reset your password: ${resetLink}`;
+            const htmlMessage = `
+                <p>You requested a password reset. Click the link below to reset your password:</p>
+                <a href="${resetLink}">Reset Password</a>
+            `;
+            const subject = 'Forgot Password';
+
+            const emailSent = await sendVerificationEmail(email, subject, textMessage, htmlMessage);
+
+            if (!emailSent) {
+                return res.status(500).json({ errors: [{ msg: 'Failed to send email' }] });
+            }
+
+            await pool.query('UPDATE pzmx_users SET verification_token = ? WHERE email = ?', [token, email]);
+
+            return res.status(200).json({ msg: 'Password reset email sent' });
+        } catch (err) {
             return res.status(500).json({ errors: [{ msg: err.message }] });
         }
     }
 );
 
+// @route    POST api/auth/reset-password
+// @desc     Verify token and reset password
+// @access   Public
+router.post(
+    '/reset-password',
+    [
+        check('token', 'Token is required').notEmpty(),
+        check('password', 'Password must be at least 6 characters long').isLength({ min: 6 })
+    ],
+    async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+        const { token, password } = req.body;
+        try {
+            const [userRow] = await pool.query('SELECT * FROM pzmx_users WHERE verification_token = ?', [token]);
 
+            if (userRow.length === 0) {
+                return res.status(400).json({ errors: [{ msg: 'Invalid link' }] });
+            }
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(password, salt);
+
+            await pool.query('UPDATE pzmx_users SET password = ?, verification_token = NULL WHERE verification_token = ?', [hashedPassword, token]);
+
+            return res.status(200).json({ msg: 'Password has been reset successfully' });
+        } catch (err) {
+            return res.status(500).json({ errors: [{ msg: err.message }] });
+        }
+    }
+);
 module.exports = router;
