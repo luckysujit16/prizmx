@@ -18,13 +18,14 @@ const P2pDemanSupplyTab = () => {
               <div className={styles.p2pBuyTitle}>Sell</div>
             </Tab>
           </TabList>
-
-          <TabPanel>
-            <P2pSupply />
-          </TabPanel>
-          <TabPanel>
-            <P2pDemand />
-          </TabPanel>
+          <div className={styles.p2pDemandSupplyTitle}>
+            <TabPanel>
+              <P2pSupply />
+            </TabPanel>
+            <TabPanel>
+              <P2pDemand />
+            </TabPanel>
+          </div>
         </div>
       </Tabs>
     </div>

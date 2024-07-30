@@ -62,7 +62,7 @@ const P2pBuy = () => {
               id="inlineCheckbox1"
               value="option1"
             />
-            <label class="form-check-label" for="inlineCheckbox1">
+            <label className="form-check-label" for="inlineCheckbox1">
               1
             </label>
           </div>

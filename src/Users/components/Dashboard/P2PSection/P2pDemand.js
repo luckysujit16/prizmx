@@ -25,12 +25,14 @@ const P2pDemand = () => {
 
   return (
     <>
+    
       <div className={styles.p2pcolumn}>
         <div className={styles.p2pcolumnTitle}>User ID</div>
         <div className={styles.p2pcolumnTitle}>Quantity</div>
         <div className={styles.p2pcolumnTitle}>Price</div>
         <div className={styles.p2pcolumnTitle}>Payment Mode</div>
       </div>
+      
 
       {buyOrdersArray.map((buyOrder) => (
         <div className={styles.p2pdataRow} key={buyOrder.id}>
@@ -40,6 +42,7 @@ const P2pDemand = () => {
           <div className={styles.p2pdataColumn}>UPI</div>
         </div>
       ))}
+      
     </>
   );
 };

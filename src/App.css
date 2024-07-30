@@ -25,6 +25,12 @@ a {
   color: #7a00cc;
 }
 
+.react-tabs__tab-list {
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 0 I !important;
+  padding: 0;
+}
+
 .react-tabs__tab {
   display: inline-block;
   border: 1px solid transparent;

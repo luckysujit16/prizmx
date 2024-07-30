@@ -76,6 +76,10 @@
   padding: 1rem;
 }
 
+.p2pDemandSupplyTitle{  
+  padding-bottom: 0.75rem;
+}
+
 .p2pRowTwoColumn {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -137,16 +141,18 @@
 .p2pcolumn {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 0.5rem;
+  background-color: #000;
+  height: 50px;
 }
 
 .p2pcolumnTitle {
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   font-weight: 600;
   padding: 5px;
-  margin-top: 0.75rem;
-  color: #767676;
+  color: #ffffff;
   padding-left: 10px;
+  align-content: center;
 }
 
 .p2pSupplyBox {
