@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-
-import styles from "../../../Users/assets/css/p2p.module.css";
-import P2pDemand from "../../components/Dashboard/P2pDemand";
-import P2pSupply from "../../components/Dashboard/P2pSupply";
-import BuySellTab from "./BuySellTab";
+import styles from "../../../assets/css/p2p.module.css";
 import SmallScreenButton from "./SmallScreenButton";
+import BuySellTab from "./BuySellTab";
+import P2pDemanSupplyTab from "./P2pDemanSupplyTab";
 
 const P2pTradeSection = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -24,9 +22,8 @@ const P2pTradeSection = () => {
           </div>
         )}
         <div className={styles.p2pContainer}>
-          <P2pDemand />
+          <P2pDemanSupplyTab />
           <BuySellTab />
-          <P2pSupply />
         </div>
       </div>
     </>

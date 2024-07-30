@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "../../assets/css/dashboard.module.css";
+import styles from "../../../assets/css/dashboard.module.css";
 
 const SmallScreenButton = () => {
   let navigate = useNavigate();

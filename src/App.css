@@ -71,6 +71,16 @@ a {
   background-color: #7a00cc;
 }
 
+.form-check-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.form-check-input:checked {
+  background-color: #004d03;
+  border-color: #004d03;
+}
+
 .alice-carousel {
   height: 150px;
   margin: 0;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import styles from "../../assets/css/p2p.module.css";
+import styles from "../../../assets/css/p2p.module.css";
 import "react-tabs/style/react-tabs.css";
 import P2pBuy from "./P2pBuy";
 import P2pSell from "./P2pSell";

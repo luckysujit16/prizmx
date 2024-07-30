@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../assets/css/p2p.module.css";
+import styles from "../../../assets/css/p2p.module.css";
 
 const P2pSell = () => {
   return (

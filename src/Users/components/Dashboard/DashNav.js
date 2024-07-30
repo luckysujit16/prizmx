@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import imgLogo from "../../../Home/assets/img/logo/dark-logo.png";
 import styles from "../../assets/css/dashboard.module.css";
@@ -57,9 +58,9 @@ const DashNav = () => {
             </button>
           </div>
           <div className={styles.profileSection}>
-            <a href="/user/profile">
+            <Link to="/user/profile">
               <FaRegUserCircle />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

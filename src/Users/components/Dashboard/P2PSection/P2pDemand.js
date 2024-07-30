@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "../../assets/css/p2p.module.css";
-import SiteUrl from "../../../config/config.json";
+import styles from "../../../assets/css/p2p.module.css";
+// import SiteUrl from "../../../../config/config.json";
 
 const P2pDemand = () => {
   const [buyOrdersArray, setBuyOrdersArray] = useState([]);
-  const url = SiteUrl.SiteUrl;
-  // console.log(url);
+  const url = process.env.REACT_APP_API_URL;
+
+  console.log("API URL IN DEMAND", url);
 
   useEffect(() => {
     axios
@@ -23,9 +24,7 @@ const P2pDemand = () => {
   }, [url]);
 
   return (
-    <div className={styles.p2pDemandBox}>
-      <div className={styles.p2pOrderBookTitle}>Buy Orders</div>
-
+    <>
       <div className={styles.p2pcolumn}>
         <div className={styles.p2pcolumnTitle}>User ID</div>
         <div className={styles.p2pcolumnTitle}>Quantity</div>
@@ -41,7 +40,7 @@ const P2pDemand = () => {
           <div className={styles.p2pdataColumn}>UPI</div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

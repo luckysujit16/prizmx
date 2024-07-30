@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import styles from "../../../Users/assets/css/p2p.module.css";
+import styles from "../../../assets/css/p2p.module.css";
 import axios from "axios";
-import SiteUrl from "../../../config/config.json";
+// import SiteUrl from "../../../../config/config.json";
 
 const P2pHeader = () => {
   const [currData, setCurrData] = useState([]);
-  const url = SiteUrl.SiteUrl;
+  const url = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     axios
@@ -13,7 +13,7 @@ const P2pHeader = () => {
       .then((res) => {
         if (res) {
           setCurrData(Object.values(res.data[0]));
-          console.log("Currency Data fetched:", currData);
+          console.log("Currency Data fetched:", res.data[0]);
         } else {
           console.log("Currency Data not fetched:", res.data);
         }
