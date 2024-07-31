@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../../assets/css/p2p.module.css";
+import P2pTradePreference from "./P2pTradePreference";
 
 const P2pSell = () => {
   return (
@@ -20,11 +21,12 @@ const P2pSell = () => {
               aria-label="Qnt"
             />
           </div>
-          <div className="row p-3">
+          <div className="row pt-4 px-3">
             <button type="button">PLACE P2P SELL ORDER</button>
           </div>
         </form>
       </div>
+      <P2pTradePreference />
     </>
   );
 };
