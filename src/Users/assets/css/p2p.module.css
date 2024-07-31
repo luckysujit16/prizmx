@@ -80,24 +80,18 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .p2pRowThreeColumn {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .p2pRowFourColumn {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .p2pdataRow {
