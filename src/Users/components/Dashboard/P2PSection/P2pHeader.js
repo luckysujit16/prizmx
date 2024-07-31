@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../../assets/css/p2p.module.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 // import SiteUrl from "../../../../config/config.json";
 
 const P2pHeader = () => {
   const [currData, setCurrData] = useState([]);
   const url = process.env.REACT_APP_API_URL;
+  
 
   useEffect(() => {
     axios
@@ -41,14 +43,14 @@ const P2pHeader = () => {
               <ul className="dropdown-menu">
                 {currData.map((c, index) => (
                   <li key={index}>
-                    <a className="dropdown-item text-wrap" href="#">
+                    <Link to={"/"} className="dropdown-item text-wrap" >
                       <div className={styles.currencyli}>
                         <div>{c.currencyLogo}</div>
                         <div className={styles.flag}>
-                          <img src={c.flagUrl} />
+                          <img src={c.flagUrl} alt="flag-logo"/>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
