@@ -15,7 +15,7 @@ const P2pTradePreference = () => {
               aria-expanded="false"
             >
               <span className={styles.currencyDropMenuTitle}>
-                Trade Value in INR
+                Filter Trade Value in INR
               </span>
             </button>
             <ul className="dropdown-menu">
@@ -27,7 +27,7 @@ const P2pTradePreference = () => {
                     <div>1000 to 99999</div>
                     <div>10000 to 999999</div>
                     <div>100000 to 9999999</div>
-                    <div>All Above </div>
+                    <div>Highest </div>
                   </div>
                 </div>
               </li>

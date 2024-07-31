@@ -134,7 +134,7 @@
   border-top-right-radius: 7px;
 }
 
-.p2pDemandBox {
+.p2pBox {
   box-shadow: 0px 4px 15px -3px #b0b0b0;
   border-radius: 5px;
 }
@@ -151,7 +151,7 @@
   font-size: 0.6rem;
   font-weight: 600;
   padding: 5px;
-  color: #5b5b5b;
+  color: #101010;
   padding-left: 10px;
   align-content: center;
 }

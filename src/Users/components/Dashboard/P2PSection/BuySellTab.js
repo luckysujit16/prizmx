@@ -18,7 +18,7 @@ const BuySellTab = () => {
     <>
       {screenWidth > 768 && (
         <Tabs>
-          <div className={styles.p2pDemandBox}>
+          <div className={styles.p2pBox}>
             <TabList>
               <Tab>
                 <div className={styles.p2pBuyTitle}>P2P Buy</div>

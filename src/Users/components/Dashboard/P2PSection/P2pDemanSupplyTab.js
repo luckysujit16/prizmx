@@ -10,7 +10,7 @@ import P2pDemand from "./P2pDemand";
 const P2pDemanSupplyTab = () => {
   return (
     <div>
-      <div className={styles.p2pDemandBox}>
+      <div className={styles.p2pBox}>
         <Tabs>
           <TabList>
             <Tab>
