@@ -76,6 +76,32 @@
   padding: 1rem;
 }
 
+.rowTopBottomPadding{
+  padding-top:0.5rem;
+  padding-bottom:0.5rem
+}
+
+.rowBottomPadding{
+  padding-bottom: 0.6rem
+}
+
+.rowTopPadding{
+  padding-top: 0.6rem;
+}
+
+.rowLeftPadding{
+  padding-left: 1rem 
+}
+
+.rowRightPadding{
+  padding-right: 1rem;
+}
+
+.rowBothSidePadding{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .p2pDemandSupplyTitle {
   padding-bottom: 0.75rem;
 }
@@ -97,6 +123,13 @@
 .p2pRowFourColumn {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding-bottom: 0.65rem;
+}
+
+.p2pRowSixColumn {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
   padding-bottom: 0.65rem;
 }
@@ -112,9 +145,14 @@
   font-weight: 400;
 }
 
+.fontSmallBold {
+  font-size: 0.70rem;
+  font-weight: 600;
+}
+
 .p2pdataColumn {
   padding: 0.75rem;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
