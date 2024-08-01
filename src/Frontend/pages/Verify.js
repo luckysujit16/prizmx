@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
 import styles from "../assets/customCSS.module.css";
+import styles1 from "../../Users/assets/css/p2p.module.css";
 import { useNavigate } from "react-router-dom";
 
 const Verify = () => {
+  const newStyles = { ...styles, ...styles1 };
   const [formData, setFormData] = useState({
     email: "",
     verificationCode: "",
