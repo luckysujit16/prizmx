@@ -1,3 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
+  width: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling 
+} */
+
+/* Your custom styles */
+body {
+  display: block;
+  margin: 8px;
+}
+
 .App {
   text-align: center;
 }
@@ -52,6 +74,11 @@ a {
 
 .error-img {
   height: fit-content;
+}
+
+.container-fluid {
+  padding: 1.5rem;
+  padding-bottom: 0;
 }
 
 .button {

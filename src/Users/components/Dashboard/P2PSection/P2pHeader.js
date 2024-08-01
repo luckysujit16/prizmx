@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const P2pHeader = () => {
   const [currData, setCurrData] = useState([]);
   const url = process.env.REACT_APP_API_URL;
-  
 
   useEffect(() => {
     axios
@@ -25,7 +24,7 @@ const P2pHeader = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row px-4 pb-3">
+      <div className="row">
         <div className={styles.p2pHeader}>
           <div className={styles.p2pTitle}>P2P Order Book</div>
           <div className={styles.p2pCurrency}>
@@ -43,11 +42,11 @@ const P2pHeader = () => {
               <ul className="dropdown-menu">
                 {currData.map((c, index) => (
                   <li key={index}>
-                    <Link to={"/"} className="dropdown-item text-wrap" >
+                    <Link to={"/"} className="dropdown-item text-wrap">
                       <div className={styles.currencyli}>
                         <div>{c.currencyLogo}</div>
                         <div className={styles.flag}>
-                          <img src={c.flagUrl} alt="flag-logo"/>
+                          <img src={c.flagUrl} alt="flag-logo" />
                         </div>
                       </div>
                     </Link>

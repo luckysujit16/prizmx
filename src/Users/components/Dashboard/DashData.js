@@ -36,7 +36,7 @@ const DashData = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row px-5">
+      <div className="row">
         <div className={styles.dashboardSection}>
           <div className={styles.dashboardData}>
             {dashboardData.map((data, index) => (

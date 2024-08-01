@@ -26,42 +26,40 @@ const DashNav = () => {
 
   return (
     <>
-      <div className="container-fluid ">
-        <div className={styles.dashheader}>
-          <div className={styles.logoSection}>
-            <img
-              onClick={() => navigate("/user")}
-              src={imgLogo}
-              alt="Prizm Logo"
-              className={styles.imgLogo}
+      <div className={styles.dashheader}>
+        <div className={styles.logoSection}>
+          <img
+            onClick={() => navigate("/user")}
+            src={imgLogo}
+            alt="Prizm Logo"
+            className={styles.imgLogo}
+          />
+        </div>
+        <div className={styles.navSection}>
+          <form className={styles.searchForm}>
+            <input
+              type="search"
+              className="form-control"
+              placeholder="Search..."
+              aria-label="Search"
             />
-          </div>
-          <div className={styles.navSection}>
-            <form className={styles.searchForm}>
-              <input
-                type="search"
-                className="form-control"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-            </form>
-          </div>
-          <div className={styles.menuSection}>
-            <button
-              onClick={routeChange}
-              name="transactions"
-              value="transactions"
-              type="button"
-              className={styles.menuButton}
-            >
-              SWAP CRYPTO TO PZMX
-            </button>
-          </div>
-          <div className={styles.profileSection}>
-            <Link to="/user/profile">
-              <FaRegUserCircle />
-            </Link>
-          </div>
+          </form>
+        </div>
+        <div className={styles.menuSection}>
+          <button
+            onClick={routeChange}
+            name="transactions"
+            value="transactions"
+            type="button"
+            className={styles.menuButton}
+          >
+            SWAP CRYPTO TO PZMX
+          </button>
+        </div>
+        <div className={styles.profileSection}>
+          <Link to="/user/profile">
+            <FaRegUserCircle />
+          </Link>
         </div>
       </div>
     </>

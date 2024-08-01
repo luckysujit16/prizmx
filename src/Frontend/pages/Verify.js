@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
-import styles from "../Verify.module.css";
+import styles from "../assets/customCSS.module.css";
 import { useNavigate } from "react-router-dom";
 
 const Verify = () => {
@@ -50,8 +50,8 @@ const Verify = () => {
 
   return (
     <>
-      <div className="container-fluid ">
-        <div className="row d-flex p-5">
+      <div className="container-fluid">
+        <div className="row">
           <div className={styles.logoSection}>
             <img
               onClick={routeChange}
@@ -64,41 +64,39 @@ const Verify = () => {
           </div>
         </div>
       </div>
-      <div className="container">
-        <div className="row px-5">
-          <div className="col-lg-12 col-md-12 col-sm-12 d-flex my-5 ">
-            <div className={styles.formSection}>
-              <p className="text-center fs-5 mb-3 fw-semibold text-secondary">
-                Verify OTP
-              </p>
+      <div className="container-fluid">
+        <div className="row">
+          <div className={styles.formSection}>
+            <p className="text-center fs-5 mb-3 fw-semibold text-secondary">
+              Verify OTP
+            </p>
 
-              <form onSubmit={handleSubmit} className={styles.form}>
-                <div className="mb-3">
-                  <div className={styles.formField}>
-                    <input
-                      type="number"
-                      name="verify_otp"
-                      onChange={handleChange}
-                      className="form form-control text-center"
-                      required
-                    />
-                  </div>
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <div className="mb-3">
+                <div className={styles.formField}>
+                  <input
+                    type="number"
+                    name="verify_otp"
+                    onChange={handleChange}
+                    className="form form-control text-center"
+                    required
+                  />
                 </div>
+              </div>
 
-                <button
-                  name="otp_verify"
-                  value="dashboard"
-                  onClick={routeChange}
-                  type="submit"
-                  className="p-2 my-4"
-                >
-                  Submit OTP
-                </button>
-              </form>
-            </div>
+              <button
+                name="otp_verify"
+                value="dashboard"
+                onClick={routeChange}
+                type="submit"
+                className="p-2 my-4"
+              >
+                Submit OTP
+              </button>
+            </form>
           </div>
-          {message && <p>{message}</p>}
         </div>
+        {message && <p>{message}</p>}
       </div>
     </>
   );

@@ -52,7 +52,7 @@ const P2pMobileViewSellOrders = () => {
         </button>
 
         {/* </label> */}
-        <div class="collapse" id="collapseExample">
+        <div class="collapse pt-3" id="collapseExample">
           <div class="card card-body">
             <div className={styles.rowTopPadding}>
               <div className={styles.p2pRowFourColumn}>
