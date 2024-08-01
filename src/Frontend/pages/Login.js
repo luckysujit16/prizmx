@@ -1,54 +1,26 @@
 // src/Home/Verify.js
 import React, { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
 import styles from "../Verify.module.css";
 
-const Verify = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    verificationCode: "",
-  });
-  const [message, setMessage] = useState("");
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../actions/auth';
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
+const Login = ({ login, isAuthenticated }) => {
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const { email, password } = formData;
+  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onSubmit = async e => {
     e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/api/verify",
-        formData
-      );
-      setMessage(response.data.message);
-    } catch (error) {
-      setMessage("Verification failed");
-      console.error(error.response.data);
-    }
+    login(email, password);
   };
 
-  let navigate = useNavigate();
-  const routeChange = (path) => {
-    const { name, value } = path.target;
+  if (isAuthenticated) {
+    return <Navigate to="/user" />;
+  }
 
-    console.log("Entered routeChange Name = ", +name + " Value " + value);
-    switch (value) {
-      case "register":
-        navigate("/register");
-        break;
-      case "verify":
-        navigate("/verify");
-        break;
-      // Add more cases as needed
-      default:
-        navigate("/");
-        break;
-    }
-  };
 
   return (
     <>
@@ -56,7 +28,6 @@ const Verify = () => {
         <div className="row d-flex p-5">
           <div className={styles.logoSection}>
             <img
-              onClick={routeChange}
               value="/"
               src={imgLogo}
               alt="Prizm Logo"
@@ -65,7 +36,6 @@ const Verify = () => {
           </div>
           <div className={styles.menuSection}>
             <button
-              onClick={routeChange}
               name="Registration"
               value="register"
               type="button"
@@ -84,14 +54,14 @@ const Verify = () => {
                 PrizmX User Login
               </p>
 
-              <form onSubmit={handleSubmit} className={styles.form}>
+              <form onSubmit={onSubmit} className={styles.form}>
                 <div className="mb-3">
                   <div className={styles.formField}>
                     <label className="fs-6 pb-3">Email</label>
                     <input
-                      type="number"
-                      name="verify_otp"
-                      onChange={handleChange}
+                      type="email"
+                      name="email"
+                      onChange={onChange}
                       className="form form-control text-center"
                       required
                     />
@@ -99,9 +69,9 @@ const Verify = () => {
                   <div className={styles.formField}>
                     <label className="fs-6 pb-3">Password</label>
                     <input
-                      type="number"
-                      name="verify_otp"
-                      onChange={handleChange}
+                      type="password"
+                      name="password"
+                      onChange={onChange}
                       className="form form-control text-center"
                       required
                     />
@@ -110,8 +80,6 @@ const Verify = () => {
 
                 <button
                   name="login"
-                  onClick={routeChange}
-                  value="verify"
                   type="submit"
                   className="p-2 my-4"
                 >
@@ -120,11 +88,20 @@ const Verify = () => {
               </form>
             </div>
           </div>
-          {message && <p>{message}</p>}
         </div>
       </div>
     </>
   );
 };
 
-export default Verify;
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { login })(Login);
+

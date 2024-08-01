@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "../../../assets/css/p2p.module.css";
-
+import SiteUrl from "../../../../config/config.json";
 const P2pSupply = () => {
   const [buyOrdersArray, setBuyOrdersArray] = useState([]);
 
-  const url = process.env.REACT_APP_API_URL;
+  const url = SiteUrl.SiteUrl;
 
   console.log("API URL IN DEMAND", url);
 

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import styles from "../../../assets/css/p2p.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import SiteUrl from "../../../../config/config.json";
+import SiteUrl from "../../../../config/config.json";
 
 const P2pHeader = () => {
   const [currData, setCurrData] = useState([]);
-  const url = process.env.REACT_APP_API_URL;
+  const url = SiteUrl.SiteUrl;
   
 
   useEffect(() => {

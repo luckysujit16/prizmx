@@ -7,7 +7,7 @@ import Login from "../Frontend/pages/Login";
 import Dashboard from "../Users/pages/Dashboard";
 import Wallet from "../Users/pages/Wallet";
 import Profile from "../Users/pages/Profile";
-import PrivateRoutes from "./PrivateRoutes";
+import PrivateRoutes from "../routing/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -33,18 +33,18 @@ const router = createBrowserRouter([
   },
   {
     path: "/user",
-    element: <PrivateRoutes />,
+    element: <PrivateRoutes />, // Protected route
     children: [
       {
         index: true,
         element: <Dashboard />,
       },
       {
-        path: "/user/transactions",
+        path: "transactions",
         element: <Wallet />,
       },
       {
-        path: "/user/profile",
+        path: "profile",
         element: <Profile />,
       },
     ],
@@ -55,5 +55,4 @@ function AppRouter() {
   return <RouterProvider router={router} />;
 }
 
-// console.log("AppRouter rendered in App.jsx");
 export default AppRouter;
