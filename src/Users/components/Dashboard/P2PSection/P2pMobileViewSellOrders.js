@@ -1,0 +1,87 @@
+import React from "react";
+import styles from "../../../assets/css/p2p.module.css";
+
+const P2pMobileViewSellOrders = () => {
+  return (
+    <div className={styles.p2pBoxUserData}>
+      <div className={styles.p2prow}>
+        <div className={styles.p2pRowTwoColumn}>
+          <div className={styles.fontMediumBold}>Sell Qnt : $ 1500</div>
+          <div className={styles.fontSmall}>Min Trade Size : $ 500</div>
+        </div>
+        <div className={styles.p2pRowNoPadding}>
+          <div className={styles.p2pRowTwoColumn}>
+            <div className={styles.rowTopBottomPadding}>
+              <p className={styles.fontMediumBold}>ID</p>
+            </div>
+            <div className={styles.rowTopBottomPadding}>
+              <p className={styles.fontMediumBold}>Verification Status</p>
+            </div>
+            <div className={styles.fontMedium}>luckysujit</div>
+            <div className={styles.fontMedium}>
+              <div className={styles.p2pRowSixColumn}>
+                {" "}
+                Email <i class="bi bi-check"></i> Mobile{" "}
+                <i class="bi bi-check"></i> Bank <i class="bi bi-check"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.rowBottomPadding}>
+          <div className={styles.p2pRowFourColumn}>
+            <span className={styles.fontSmallBold}>Positive Feedback</span>
+            <span>
+              <i class="bi bi-hand-thumbs-up"></i> 20
+            </span>
+            <span className={styles.fontSmallBold}>Negative Feedback</span>
+            <span>
+              {" "}
+              <i class="bi bi-hand-thumbs-down"></i> 2
+            </span>
+          </div>
+        </div>
+        <button
+          class={styles.p2pButton}
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          <label className={styles.fontSmallBold}>Trade History</label>
+        </button>
+
+        {/* </label> */}
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <div className={styles.rowTopPadding}>
+              <div className={styles.p2pRowFourColumn}>
+                <span className={styles.fontSmallBold}>Registered Sinces</span>
+                <span className={styles.fontSmall}>412 days</span>
+                <span className={styles.fontSmallBold}>30 Days Trades</span>
+                <span className={styles.fontSmall}>
+                  Success : 20 <br />
+                  Failed : 2
+                </span>
+                <span className={styles.fontSmallBold}>
+                  7 Days Trade Volume{" "}
+                </span>
+                <span className={styles.fontSmall}>$ 512</span>
+                <span className={styles.fontSmallBold}>30 Days Trades</span>
+                <span className={styles.fontSmall}>$ 10250</span>
+                <span className={styles.fontSmallBold}>
+                  365 Days Trade Volume{" "}
+                </span>
+                <span className={styles.fontSmall}>$ 50012</span>
+                <span className={styles.fontSmallBold}>Life Time Trades</span>
+                <span className={styles.fontSmall}>$ 102050</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default P2pMobileViewSellOrders;

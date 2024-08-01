@@ -76,28 +76,28 @@
   padding: 1rem;
 }
 
-.rowTopBottomPadding{
-  padding-top:0.5rem;
-  padding-bottom:0.5rem
+.rowTopBottomPadding {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.rowBottomPadding{
-  padding-bottom: 0.6rem
+.rowBottomPadding {
+  padding-bottom: 0.6rem;
 }
 
-.rowTopPadding{
+.rowTopPadding {
   padding-top: 0.6rem;
 }
 
-.rowLeftPadding{
-  padding-left: 1rem 
+.rowLeftPadding {
+  padding-left: 1rem;
 }
 
-.rowRightPadding{
+.rowRightPadding {
   padding-right: 1rem;
 }
 
-.rowBothSidePadding{
+.rowBothSidePadding {
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -145,8 +145,20 @@
   font-weight: 400;
 }
 
+.fontMedium {
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.fontMediumBold {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0;
+}
+
 .fontSmallBold {
-  font-size: 0.70rem;
+  font-size: 0.7rem;
   font-weight: 600;
 }
 
@@ -162,6 +174,13 @@
   gap: 1rem;
 }
 
+.p2pButton {
+  width: fit-content;
+  padding: 0.5rem;
+  font-size: 0.65rem;
+  background-color: #767676;
+}
+
 .p2pBuyTitle {
   padding: 1rem;
   text-transform: capitalize;
@@ -175,6 +194,12 @@
 .p2pBox {
   box-shadow: 0px 4px 15px -3px #b0b0b0;
   border-radius: 5px;
+}
+
+.p2pBoxUserData {
+  box-shadow: 0px 4px 15px -3px #b0b0b0;
+  border-radius: 5px;
+  background-color: #f0f8ff;
 }
 
 .p2pcolumn {
@@ -274,6 +299,30 @@ button {
     width: 100%;
     padding: auto;
   }
+
+  .p2pRowNoPadding {
+    padding: 0;
+  }
+
+  .p2pRowTwoColumn {
+    gap: 0;
+    padding-bottom: 0.65rem;
+  }
+
+  .p2pRowThreeColumn {
+    gap: 0.4rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .p2pRowFourColumn {
+    gap: 0.4rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .p2pRowSixColumn {
+    gap: 0.4rem;
+    padding-bottom: 0.65rem;
+  }
 }
 
 @media only screen and (max-width: 769px) {
@@ -323,5 +372,25 @@ button {
   .p2pSellBox {
     width: 100%;
     padding: auto;
+  }
+
+  .p2pRowTwoColumn {
+    gap: 0;
+    padding-bottom: 0.65rem;
+  }
+
+  .p2pRowThreeColumn {
+    gap: 0.4rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .p2pRowFourColumn {
+    gap: 0.4rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .p2pRowSixColumn {
+    gap: 0.4rem;
+    padding-bottom: 0.65rem;
   }
 }
