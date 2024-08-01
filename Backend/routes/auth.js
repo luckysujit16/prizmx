@@ -38,7 +38,7 @@ const sendVerificationEmail = async (email, subject, textMessage, htmlMessage=''
 // @access   Private
 router.get('/', auth, async (req, res) => {
     try {
-        const [userRows] = await pool.query('SELECT name, email, referral_id, created_on FROM crmbux_users WHERE user_id = ?', [req.user.user_id]);
+        const [userRows] = await pool.query('SELECT name, email, referral_id, created_on FROM pzmx_users WHERE id = ?', [req.user.user_id]);
         if (userRows.length === 0) {
             return res.status(400).json({ errors: [{ msg: 'User not found' }] });
         }
