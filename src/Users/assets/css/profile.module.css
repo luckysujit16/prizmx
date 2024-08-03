@@ -1,2 +1,70 @@
-.profileTitle {
+.profileRowThreeColumn {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem; 
+}
+
+.profileRowTwoColumn {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.profileRowFourColumn {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.profileBox {
+    box-shadow: 0px 4px 15px -3px #b0b0b0;
+    border-radius: 5px;    
+    text-align: center;
+    background-color: #1e1e1e;
+    color: #b0b0b0;
+    padding: 1rem;
+  }
+
+  .profileDataBox {
+    box-shadow: 0px 4px 15px -3px #b0b0b0;
+    border-radius: 5px;   
+    text-align: center;   
+    padding: 0.5rem;
+  }
+  
+.profileTitle{
+    font-size: 0.8rem;
+    text-align: left;
+    font-weight: 500;
+    
+    
+}
+
+.profileName{
+    font-size: 0.8rem;
+    text-align: left;
+    font-weight: 500;
+    padding-left: 1.25rem;
+   
+}
+
+.profileImg{
+    width:100%;
+    max-width: 100px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .profileRowThreeColumn {
+    display: grid;
+    grid-template-columns: 50% 50% 100%;
+    gap: 1rem; 
+  }
+
+}
+
+@media only screen and (max-width: 769px) {
+
 }

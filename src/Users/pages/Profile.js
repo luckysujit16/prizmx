@@ -5,6 +5,7 @@ import styles2 from "../assets/css/dashboard.module.css";
 import DashNav from "../components/Dashboard/DashNav";
 import DashFooter from "../components/Dashboard/DashFooter";
 import AdCarousel from "../../Home/components/AdCarousel";
+import { UserPersonalData } from "../components/Profile/UserPersonalData";
 
 const Profile = () => {
   const newStyles = { ...styles, ...styles1, ...styles2 };
@@ -17,6 +18,7 @@ const Profile = () => {
           <div className={newStyles.row}>
             <div className={newStyles.rowBottomPadding}>
               <p className={newStyles.p2pTitle}>Profile</p>
+              <UserPersonalData/>
             </div>
           </div>
         </div>
