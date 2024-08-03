@@ -39,8 +39,8 @@ body {
 }
 
 .dropdown-item {
-  background-color: #dedede98;
-  padding: 0;
+  padding: 5px;
+  text-align: center;
 }
 
 a {

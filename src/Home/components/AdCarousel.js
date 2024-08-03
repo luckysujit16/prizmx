@@ -6,7 +6,7 @@ import img1 from "../assets/img/slider.png";
 import img2 from "../assets/img/slider.png";
 import img3 from "../assets/img/slider.png";
 
-const CustomCarousel = () => {
+const AdCarousel = () => {
   return (
     <Carousel className={styles.carousel}>
       <Carousel.Item>
@@ -22,4 +22,4 @@ const CustomCarousel = () => {
   );
 };
 
-export default CustomCarousel;
+export default AdCarousel;
