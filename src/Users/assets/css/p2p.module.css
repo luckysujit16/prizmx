@@ -181,8 +181,7 @@
   background-color: #767676;
 }
 
-.p2pBuyTitle {
-  padding: 1rem;
+.p2pBuyTitle {  
   text-transform: capitalize;
   font-size: 0.9rem;
   font-weight: 500;

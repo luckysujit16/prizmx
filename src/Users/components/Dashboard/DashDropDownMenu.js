@@ -14,8 +14,11 @@ const DashDropDownMenu = () => {
       </div>
 
       <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li>
+          <Link to="/user/profile" className="dropdown-item">Profile</Link>
+        </li>
         <li>
-          <a className="dropdown-item">Logout</a>
+          <Link to="#" className="dropdown-item">Logout</Link>
         </li>
       </ul>
     </div>

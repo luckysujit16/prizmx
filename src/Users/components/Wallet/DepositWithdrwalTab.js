@@ -13,7 +13,7 @@ const DepositWithdrwalTab = () => {
       <Tabs>
         <TabList>
           <Tab>
-            <div className={styles.walletTitle}>Combined Report</div>
+            <div className={styles.walletTitle}>All Transactions</div>
           </Tab>
           <Tab>
             <div className={styles.walletTitle}>Deposit</div>
