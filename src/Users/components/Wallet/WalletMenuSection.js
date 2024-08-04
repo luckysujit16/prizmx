@@ -17,7 +17,7 @@ const WalletMenuSection = ({ setActiveTab }) => {
         className={styles.walletIcons}
       >
         <MdOutlineAccountBalanceWallet />
-        <div className={styles.mediumBoldFont}>Wallet</div>
+        <span className={styles.mediumBoldFont}>Wallet</span>
       </button>
       <button
         type="button"
@@ -25,7 +25,7 @@ const WalletMenuSection = ({ setActiveTab }) => {
         className={styles.walletIcons}
       >
         <MdKeyboardDoubleArrowDown />
-        <div className={styles.mediumBoldFont}>Deposit Crypto</div>
+        <span className={styles.mediumBoldFont}>Deposit Crypto</span>
       </button>
       <button
         type="button"
@@ -33,7 +33,7 @@ const WalletMenuSection = ({ setActiveTab }) => {
         className={styles.walletIcons}
       >
         <MdKeyboardDoubleArrowUp />
-        <div className={styles.mediumBoldFont}>Withdraw Crypto</div>
+        <span className={styles.mediumBoldFont}>Withdraw Crypto</span>
       </button>
       <button
         type="button"
@@ -41,7 +41,7 @@ const WalletMenuSection = ({ setActiveTab }) => {
         className={styles.walletIcons}
       >
         <MdOutlineSwapHoriz />
-        <div className={styles.mediumBoldFont}>Swap Crypto</div>
+        <span className={styles.mediumBoldFont}>Swap Crypto</span>
       </button>
     </div>
   );
