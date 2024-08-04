@@ -3,7 +3,8 @@ import {
     USER_LOADED,
     AUTH_ERROR,
     LOGIN_SUCCESS,
-    LOGOUT
+    LOGOUT,
+    EMAIL_VERICATION_FAILLED
   } from '../actions/types';
   
   const initialState = {
@@ -33,6 +34,7 @@ import {
           loading: false
         };
       case AUTH_ERROR:
+      case EMAIL_VERICATION_FAILLED:
       case LOGOUT:
         return {
           ...state,

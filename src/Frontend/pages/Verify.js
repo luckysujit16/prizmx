@@ -1,85 +1,57 @@
 // src/Home/Verify.js
 import React, { useState } from "react";
-import axios from "axios";
+import { connect } from 'react-redux';
+import { Navigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
 import styles from "../assets/customCSS.module.css";
 import styles1 from "../../Users/assets/css/p2p.module.css";
-import { useNavigate } from "react-router-dom";
+import { verifyOtp } from '../../actions/auth';
 
-const Verify = () => {
+const Verify = ({ verifyOtp, isAuthenticated }) => {
   const newStyles = { ...styles, ...styles1 };
-  const [formData, setFormData] = useState({
-    email: "",
-    verificationCode: "",
-  });
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({ otp: 0 });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
+  const { otp } = formData;
+  const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/api/verify",
-        formData
-      );
-      setMessage(response.data.message);
-    } catch (error) {
-      setMessage("Verification failed");
-      console.error(error.response.data);
-    }
+    verifyOtp(otp);
   };
-
-  let navigate = useNavigate();
-  const routeChange = (path) => {
-    const { name, value } = path.target;
-    // console.log(`Target Name ${name} Link ${value} Clicked.`);
-    // return;
-    switch (value) {
-      case "/":
-        navigate("/");
-        break;
-      case "dashboard":
-        navigate("/user");
-        break;
-      default:
-        navigate("/");
-    }
-  };
+  if (isAuthenticated) {
+    return <Navigate to="/user" />;
+  }
 
   return (
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className={styles.logoSection}>
+          <div className={newStyles.logoSection}>
             <img
-              onClick={routeChange}
               name="Logo"
               value="/"
               src={imgLogo}
               alt="Prizm Logo"
-              className={styles.imgLogo}
+              className={newStyles.imgLogo}
             />
           </div>
         </div>
       </div>
       <div className="container-fluid">
         <div className="row">
-          <div className={styles.formSection}>
+          <div className={newStyles.formSection}>
             <p className="text-center fs-5 mb-3 fw-semibold text-secondary">
               Verify OTP
             </p>
 
-            <form onSubmit={handleSubmit} className={styles.form}>
+            <form onSubmit={onSubmit} className={newStyles.form}>
               <div className="mb-3">
-                <div className={styles.formField}>
+                <div className={newStyles.formField}>
                   <input
                     type="number"
-                    name="verify_otp"
-                    onChange={handleChange}
+                    name="otp"
+                    onChange={onChange}
                     className="form form-control text-center"
                     required
                   />
@@ -89,7 +61,6 @@ const Verify = () => {
               <button
                 name="otp_verify"
                 value="dashboard"
-                onClick={routeChange}
                 type="submit"
                 className="p-2 my-4"
               >
@@ -98,10 +69,19 @@ const Verify = () => {
             </form>
           </div>
         </div>
-        {message && <p>{message}</p>}
+        
       </div>
     </>
   );
 };
 
-export default Verify;
+Verify.propTypes = {
+  verifyOtp: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { verifyOtp })(Verify);
