@@ -21,8 +21,9 @@ const P2pMobileViewSellOrders = () => {
             <div className={styles.fontMedium}>
               <div className={styles.p2pRowSixColumn}>
                 {" "}
-                Email <i class="bi bi-check"></i> Mobile{" "}
-                <i class="bi bi-check"></i> Bank <i class="bi bi-check"></i>
+                Email <i className="bi bi-check"></i> Mobile{" "}
+                <i className="bi bi-check"></i> Bank{" "}
+                <i className="bi bi-check"></i>
               </div>
             </div>
           </div>
@@ -31,17 +32,17 @@ const P2pMobileViewSellOrders = () => {
           <div className={styles.p2pRowFourColumn}>
             <span className={styles.fontSmallBold}>Positive Feedback</span>
             <span>
-              <i class="bi bi-hand-thumbs-up"></i> 20
+              <i className="bi bi-hand-thumbs-up"></i> 20
             </span>
             <span className={styles.fontSmallBold}>Negative Feedback</span>
             <span>
               {" "}
-              <i class="bi bi-hand-thumbs-down"></i> 2
+              <i className="bi bi-hand-thumbs-down"></i> 2
             </span>
           </div>
         </div>
         <button
-          class={styles.p2pButton}
+          className={styles.p2pButton}
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapseExample"
@@ -52,8 +53,8 @@ const P2pMobileViewSellOrders = () => {
         </button>
 
         {/* </label> */}
-        <div class="collapse pt-3" id="collapseExample">
-          <div class="card card-body">
+        <div className="collapse pt-3" id="collapseExample">
+          <div className="card card-body">
             <div className={styles.rowTopPadding}>
               <div className={styles.p2pRowFourColumn}>
                 <span className={styles.fontSmallBold}>Registered Sinces</span>
