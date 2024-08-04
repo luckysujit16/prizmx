@@ -1,9 +1,12 @@
 // src/Home/Verify.js
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
 import styles from "../assets/customCSS.module.css";
 import styles1 from "../../Users/assets/css/p2p.module.css";
+import { login } from '../../actions/auth';
 
 const Login = ({ login, isAuthenticated }) => {
   const newStyles = { ...styles, ...styles1 };
@@ -25,97 +28,75 @@ const Login = ({ login, isAuthenticated }) => {
       <div className={newStyles.rowBothSidePadding}>
         <div className={newStyles.twoColumnRow}>
           <div className={newStyles.logoSection}>
-            <img
-              value="/"
-              src={imgLogo}
-              alt="Prizm Logo"
-              className={newStyles.imgLogo}
-            />
+            <Link to="/" >
+              <img
+                value="/"
+                src={imgLogo}
+                alt="Prizm Logo"
+                className={newStyles.imgLogo}
+              />
+            </Link>
           </div>
           <div className={newStyles.menuSection}>
-            <button
-              name="Registration"
-              value="register"
-              type="button"
-              className={newStyles.menuButton}
-            >
-              Register
-            </button>
+            <Link to="/register" >
+              <button
+                name="Registration"
+                value="register"
+                type="button"
+                className={newStyles.menuButton}
+              >
+                Register
+              </button>
+            </Link>
           </div>
         </div>
       </div>
       <div className="container-fluid">
         <div className="row">
-          <div className={styles.formSection}>
+          <div className={newStyles.formSection}>
             <p className="text-center fs-5 mb-3 fw-semibold text-secondary">
               PrizmX User Login
             </p>
 
-            <form onSubmit={handleSubmit} className={styles.form}>
+
+            <form onSubmit={onSubmit} className={newStyles.form}>
               <div className="mb-3">
-                <div className={styles.formField}>
+                <div className={newStyles.formField}>
                   <label className="fs-6 pb-3">Email</label>
                   <input
-                    type="number"
-                    name="verify_otp"
-                    onChange={handleChange}
-                    className="form form-control text-center"
-                    required
-                  />
-                </div>
-              </div>
-              <form onSubmit={onSubmit} className={styles.form}>
-                <div className="mb-3">
-                  <div className={styles.formField}>
-                    <label className="fs-6 pb-3">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      onChange={onChange}
-                      className="form form-control text-center"
-                      required
-                    />
-                  </div>
-                  <div className={styles.formField}>
-                    <label className="fs-6 pb-3">Password</label>
-                    <input
-                      type="password"
-                      name="password"
-                      onChange={onChange}
-                      className="form form-control text-center"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className={styles.formField}>
-                  <label className="fs-6 pb-3">Password</label>
-                  <input
-                    type="number"
-                    name="verify_otp"
-                    onChange={handleChange}
+                    type="email"
+                    name="email"
+                    onChange={onChange}
                     className="form form-control text-center"
                     required
                   />
                 </div>
 
-                <button
-                  name="login"
-                  onClick={routeChange}
-                  value="verify"
-                  type="submit"
-                  className="p-2 my-4"
-                >
-                  Login
-                </button>
-              </form>
-              <button name="login" type="submit" className="p-2 my-4">
+              </div>
+              <div className={newStyles.formField}>
+                <label className="fs-6 pb-3">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  onChange={onChange}
+                  className="form form-control text-center"
+                  required
+                />
+              </div>
+
+              <button
+                name="login"
+                value="verify"
+                type="submit"
+                className="p-2 my-4"
+              >
                 Login
               </button>
             </form>
+
           </div>
         </div>
       </div>
-      {message && <p>{message}</p>}
     </>
   );
 };

@@ -1,102 +1,85 @@
-// src/Home/Register.js
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { connect } from 'react-redux';
+import { Link, Navigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useSearchParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { register } from '../../actions/auth';
 import styles from "../assets/customCSS.module.css";
 import styles1 from "../../Users/assets/css/p2p.module.css";
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
 
-const Register = () => {
-  const newStyles = { ...styles, ...styles1 };
+const Register = ({ register }) => {
+  const [searchParams] = useSearchParams();
+  const [referralId, setReferralId] = useState("PZMX_369369369"); // default referral ID
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    mobile: "",
-    password: "",
-    confirmPassword: "",
-    referralId: "",
+    referred_by: referralId,
+    name: '',
+    email: '',
+    password: '',
+    rpassword: ''
   });
-  const [errors, setErrors] = useState({});
-  const [message, setMessage] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    console.log(`${name}: ${value}`);
-  };
+  const [redirect, setRedirect] = useState(false);
 
-  const validateForm = () => {
-    let formErrors = {};
-    // Validate password strength
-    if (formData.password !== formData.confirmPassword) {
-      formErrors.confirmPassword = "Passwords do not match";
+  useEffect(() => {
+    const referral_id = searchParams.get('referral_id');
+    if (referral_id) {
+      setReferralId(referral_id);
+      setFormData((prevFormData) => ({ ...prevFormData, referred_by: referral_id }));
     }
-    // Add other validation as needed
-    return formErrors;
-  };
+  }, [searchParams]);
 
-  const handleSubmit = async (e) => {
+  const { name, email, password, rpassword } = formData;
+
+  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = async e => {
     e.preventDefault();
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length === 0) {
-      try {
-        const response = await axios.post(
-          "http://localhost:5000/api/register",
-          formData
-        );
-        setMessage(response.data.message);
-      } catch (error) {
-        setMessage("Registration failed");
-        console.error(error.response.data); // log error for debugging
-      }
+    if (password !== rpassword) {
+      toast.error('Passwords do not match');
     } else {
-      setErrors(validationErrors);
+      register({ referred_by: referralId, name, email, password }, (success) => {
+        if (success) {
+          setRedirect(true);
+        }
+      });
     }
   };
+  
 
-  let navigate = useNavigate();
-  const routeChange = (path) => {
-    const { name, value } = path.target;
 
-    console.log("Entered routeChange Name = ", +name + " Value " + value);
-    switch (value) {
-      case "login":
-        navigate("/login");
-        break;
-      case "verify":
-        navigate("/verify");
-        break;
-      // Add more cases as needed
-      default:
-        navigate("/");
-        break;
-    }
-  };
+  const newStyles = { ...styles, ...styles1 };
+
+  if (redirect) {
+    return <Navigate to="/verify" />;
+  }
 
   return (
     <>
       <div className={newStyles.rowBothSidePadding}>
         <div className={newStyles.twoColumnRow}>
           <div className={newStyles.logoSection}>
-            <img
-              onClick={routeChange}
-              name="Logo"
-              value="/"
-              src={imgLogo}
-              alt="Prizm Logo"
-              className={newStyles.imgLogo}
-            />
+            <Link to="/" >
+              <img
+                name="Logo"
+                src={imgLogo}
+                style={{ cursor: "pointer" }}
+                alt="Prizm Logo"
+                className={newStyles.imgLogo}
+              />
+            </Link>
           </div>
           <div className={newStyles.menuSection}>
-            <button
-              onClick={routeChange}
-              name="Login"
-              value="login"
-              type="button"
-              className={newStyles.menuButton}
-            >
-              Login
-            </button>
+            <Link to="/login">
+              <button
+                name="Login"
+                type="button"
+                className={newStyles.menuButton}
+              >
+                Login
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -105,10 +88,41 @@ const Register = () => {
         <div className="row">
           <div className={newStyles.formSection}>
             <p className="text-center fs-5 mb-3 fw-semibold text-secondary">
-              PrizmX Registration Form
+              PrizmX Registration
             </p>
 
-            <form onSubmit={handleSubmit} className={newStyles.form}>
+            <form onSubmit={onSubmit} className={newStyles.form}>
+              <div className="mb-3">
+                <div className={newStyles.formField}>
+                  <label className="fs-6 pb-3">Referral Id</label>
+                </div>
+                <div className={newStyles.formField}>
+                  <input
+                    type="text"
+                    name="referred_by"
+                    value={referralId}
+                    onChange={onChange}
+                    className="form form-control"
+                    readOnly
+                  />
+                </div>
+              </div>
+              <div className="mb-3">
+                <div className={newStyles.formField}>
+                  <label className="fs-6 pb-3">Name</label>
+                </div>
+                <div className={newStyles.formField}>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Please Enter Valid Name"
+                    value={name}
+                    onChange={onChange}
+                    className="form form-control"
+                    required
+                  />
+                </div>
+              </div>
               <div className="mb-3">
                 <div className={newStyles.formField}>
                   <label className="fs-6 pb-3">Email</label>
@@ -118,8 +132,8 @@ const Register = () => {
                     type="email"
                     name="email"
                     placeholder="Please Enter Valid Email Address"
-                    value={formData.email}
-                    onChange={handleChange}
+                    value={email}
+                    onChange={onChange}
                     className="form form-control"
                     required
                   />
@@ -131,11 +145,11 @@ const Register = () => {
                 </div>
                 <div className={newStyles.formField}>
                   <input
-                    type="text"
+                    type="password"
                     name="password"
-                    placeholder="Please Strong Alpha Numeric Password"
-                    value={formData.email}
-                    onChange={handleChange}
+                    placeholder="Please Enter Strong Alpha Numeric Password"
+                    value={password}
+                    onChange={onChange}
                     className="form form-control"
                     required
                   />
@@ -147,28 +161,26 @@ const Register = () => {
                 </div>
                 <div className={newStyles.formField}>
                   <input
-                    type="text"
-                    name="confirm-password"
+                    type="password"
+                    name="rpassword"
                     placeholder="Confirm Password as per above field"
-                    value={formData.email}
-                    onChange={handleChange}
+                    value={rpassword}
+                    onChange={onChange}
                     className="form form-control"
                     required
                   />
                 </div>
               </div>
               <button
-                onClick={routeChange}
-                value="verify"
                 name="Register"
                 type="submit"
                 className="p-2 my-4"
               >
                 Register
               </button>
-              <a href="/" className={newStyles.formlink}>
+              <Link to="/" className={newStyles.formlink}>
                 Back To PrizmX
-              </a>
+              </Link>
             </form>
           </div>
         </div>
@@ -177,4 +189,9 @@ const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  register: PropTypes.func.isRequired,
+};
+
+export default connect(null, { register })(Register);
+
