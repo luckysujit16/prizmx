@@ -1,11 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { FaRegUserCircle } from "react-icons/fa";
+import { AiOutlineSwap } from "react-icons/ai";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import imgLogo from "../../../Home/assets/img/logo/dark-logo.png";
 import styles from "../../assets/css/dashboard.module.css";
+import styles1 from "../../assets/css/p2p.module.css";
+import DashDropDownMenu from "./DashDropDownMenu";
 
 const DashNav = () => {
+  const newStyles = { ...styles, ...styles1 };
   let navigate = useNavigate();
 
   const routeChange = (event) => {
@@ -26,17 +29,17 @@ const DashNav = () => {
 
   return (
     <>
-      <div className={styles.dashheader}>
-        <div className={styles.logoSection}>
+      <div className={newStyles.dashheader}>
+        <div className={newStyles.logoSection}>
           <img
             onClick={() => navigate("/user")}
             src={imgLogo}
             alt="Prizm Logo"
-            className={styles.imgLogo}
+            className={newStyles.imgLogo}
           />
         </div>
-        <div className={styles.navSection}>
-          <form className={styles.searchForm}>
+        <div className={newStyles.navSection}>
+          <form className={newStyles.searchForm}>
             <input
               type="search"
               className="form-control"
@@ -45,21 +48,20 @@ const DashNav = () => {
             />
           </form>
         </div>
-        <div className={styles.menuSection}>
-          <button
-            onClick={routeChange}
-            name="transactions"
-            value="transactions"
-            type="button"
-            className={styles.menuButton}
-          >
-            SWAP CRYPTO TO PZMX
-          </button>
+        <div className={newStyles.menuSection}>
+          <div className={styles.menuButton}>
+            <MdKeyboardDoubleArrowDown />
+          </div>
+          <p className={newStyles.fontSmall}>Deposit Crypto</p>
         </div>
-        <div className={styles.profileSection}>
-          <Link to="/user/profile">
-            <FaRegUserCircle />
-          </Link>
+        <div className={newStyles.menuSection}>
+          <div className={newStyles.menuButton}>
+            <AiOutlineSwap />
+          </div>
+          <p className={newStyles.fontSmall}>Swap Crypto</p>
+        </div>
+        <div className={newStyles.profileSection}>
+          <DashDropDownMenu />
         </div>
       </div>
     </>

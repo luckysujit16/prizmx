@@ -1,20 +1,17 @@
 .dashheader {
   display: grid;
-  grid-template-columns: 60% auto auto auto;
+  grid-template-columns: 60% auto auto auto auto;
   gap: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-top: 1rem;
 }
 .logoSection {
-  /* width: 60%; */
   padding-top: 1rem;
 }
 
 .menuSection {
-  /* width: 100%; */
-  padding-top: 1rem;
-  text-align: end;
+  text-align: center;
 }
 
 .navSection {
@@ -27,7 +24,7 @@
   /* width: 20%; */
   padding-top: 0.6rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.35rem;
   color: #7a00cc;
 }
 
@@ -39,6 +36,9 @@
 
 .menuButton {
   max-width: 200px;
+  text-align: center;
+  font-size: 2.35rem;
+  color: #7a00cc;
 }
 
 .swapButton {
@@ -110,7 +110,7 @@ figcaption {
 
 @media only screen and (max-width: 1024px) {
   .dashheader {
-    grid-template-columns: 20% auto auto auto;
+    grid-template-columns: 20% auto auto auto auto;
   }
   .logoSection {
     text-align: center;
@@ -124,13 +124,9 @@ figcaption {
     display: none;
   }
 
-  .menuSection {
-    display: none;
-  }
-
   .menuButton {
     width: auto;
-    font-size: 0.75rem;
+    font-size: 2.25rem;
     font-weight: 600;
     width: -webkit-fill-available;
   }
@@ -172,7 +168,7 @@ figcaption {
 
 @media only screen and (max-width: 769px) {
   .dashheader {
-    grid-template-columns: 10% auto 10%;
+    grid-template-columns: 10% auto 10% 10% 10%;
   }
 
   .logoSection {
@@ -180,7 +176,7 @@ figcaption {
     background-image: url(../img/icons/small_logo.ico);
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    margin-bottom: 1.5rem;
   }
 
   .imgLogo {
@@ -189,7 +185,7 @@ figcaption {
 
   .menuButton {
     width: auto;
-    font-size: 0.75rem;
+    font-size: 2.25rem;
     font-weight: 600;
   }
 

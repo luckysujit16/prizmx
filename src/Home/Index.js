@@ -5,7 +5,7 @@ import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import Header from "../Home/components/Header";
 import Body from "../Home/components/Body";
 import Footer from "../Home/components/Footer";
-import CustomCarousel from "../Home/components/Carousel";
+import AdCarousel from "../Home/components/AdCarousel";
 import Banner from "./components/Banner";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
         <Header />
       </div>
       <div className="row">
-        <CustomCarousel />
+        <AdCarousel />
         <Banner />
       </div>
 
