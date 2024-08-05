@@ -56,7 +56,7 @@
 }
 
 .formTitleSmall {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-align: center;
   padding: 0.8rem;
@@ -141,7 +141,7 @@
 }
 
 .fontSmall {
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   font-weight: 400;
 }
 
@@ -158,7 +158,7 @@
 }
 
 .fontSmallBold {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
@@ -181,7 +181,7 @@
   background-color: #767676;
 }
 
-.p2pBuyTitle {  
+.p2pBuyTitle {
   text-transform: capitalize;
   font-size: 0.9rem;
   font-weight: 500;
