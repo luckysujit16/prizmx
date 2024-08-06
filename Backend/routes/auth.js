@@ -85,17 +85,18 @@ router.post(
             const timestamp = Date.now().toString(36);
             const randomString = Math.random().toString(36).substring(2, 7);
             const referralID = `PZMX_${timestamp}-${randomString}`;
-            const otp = Math.floor(100000 + Math.random() * 900000);
+            const token = crypto.randomBytes(32).toString('hex');
+            
 
             await pool.query(
-                'INSERT INTO pzmx_users (name, email, password, referral_id, referred_by, otp) VALUES (?, ?, ?, ?, ?, ?)',
-                [name, email, hashedPassword, referralID, referred_by, otp]
+                'INSERT INTO pzmx_users (name, email, password, referral_id, referred_by, email_verification_token) VALUES (?, ?, ?, ?, ?, ?)',
+                [name, email, hashedPassword, referralID, referred_by, token]
             );
 
-            const message = `Your verification code is: ${otp}`;
+            const message = `Your verification link is: <a href="http://localhost:5000?verification_token=${token}">Click Here To verify</a>`;
             const subject = 'Email Verification';
-            const emailSent = await sendVerificationEmail(email, subject, message);
 
+            const emailSent = await sendVerificationEmail(email, subject, '', message);
             if (!emailSent) {
                 return res.status(500).json({ errors: [{ msg: 'Failed to send verification email' }] });
             }
@@ -146,17 +147,17 @@ router.post(
 
             // Check if the email is verified
             if (!user.is_verified) {
-                const otp = Math.floor(100000 + Math.random() * 900000);
-                const message = `Your verification code is: ${otp}`;
+                const token = crypto.randomBytes(32).toString('hex');
+                const message = `Your verification link is: <a href="http://localhost:5000?verification_token=${token}">Click Here To verify</a>`;
                 const subject = 'Email Verification';
 
-                const emailSent = await sendVerificationEmail(email, subject, message);
+                const emailSent = await sendVerificationEmail(email, subject, '', message);
                 if (!emailSent) {
                     return res.status(500).json({ errors: [{ msg: 'Failed to send verification email' }] });
                 }
 
                 // Save OTP to the database for later verification (you might need a new column for this in your users table)
-                await pool.query('UPDATE pzmx_users SET otp = ? WHERE email = ?', [otp, email]);
+                await pool.query('UPDATE pzmx_users SET email_verification_token = ? WHERE email = ?', [token, email]);
 
                 return res.status(400).json({ errors: [{ msg: 'Please verify your email address!' }] });
             }
@@ -192,7 +193,7 @@ router.post(
 router.post(
     '/email-verification',
     [
-        check('otp', 'Please enter a valid Otp').isNumeric()
+        check('verification_token', 'Verification token is required').not().isEmpty()
     ],
     async (req, res) => {
         const errors = validationResult(req);
@@ -200,41 +201,26 @@ router.post(
             return res.status(400).json({ errors: errors.array() });
         }
 
-        const { otp } = req.body;
+        const { verification_token } = req.body;
 
         try {
-            const [userRows] = await pool.query('SELECT * FROM pzmx_users WHERE otp = ?', [otp]);
+            const [userRows] = await pool.query('SELECT * FROM pzmx_users WHERE email_verification_token = ?', [verification_token]);
             if (userRows.length === 0) {
-                return res.status(400).json({ errors: [{ msg: 'Invalid Otp' }] });
+                return res.status(400).json({ errors: [{ msg: 'Invalid Verification Link' }] });
             }
 
             const user = userRows[0];
 
-            await pool.query('UPDATE pzmx_users SET otp = NULL, is_verified = 1 WHERE otp = ?', [otp]);
+            await pool.query('UPDATE pzmx_users SET email_verification_token = NULL, is_verified = 1 WHERE id = ?', [user.id]);
 
-            const payload = {
-                user: {
-                    user_id: user.id,
-                    email: user.email
-                }
-            };
-
-            // Sign the JWT token
-            jwt.sign(
-                payload,
-                process.env.JWT_SECRET,
-                { expiresIn: '2 days' },
-                (err, token) => {
-                    if (err) throw err;
-                    res.json({ token });
-                }
-            );
+            return res.json({ result: "OK", message: "Email verified successfully" });
         } catch (err) {
             console.error(err.message);
             return res.status(500).json({ errors: [{ msg: 'Server Error' }] });
         }
     }
 );
+
 
 // @route    POST api/auth/forgot-password-send-email
 // @desc     Forgot password send token email
