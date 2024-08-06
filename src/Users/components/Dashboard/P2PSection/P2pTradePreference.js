@@ -70,7 +70,7 @@ const P2pTradePreference = () => {
               value="option1"
             />
             <label className="form-check-label" for="inlineCheckbox1">
-              Balance <i class="bi bi-chevron-right"></i> $ 100
+              Balance <i className="bi bi-chevron-right"></i> $ 100
             </label>
           </div>
           <div className="form-check form-check-inline">
@@ -81,7 +81,7 @@ const P2pTradePreference = () => {
               value="option2"
             />
             <label className="form-check-label" for="inlineCheckbox2">
-              Balance <i class="bi bi-chevron-right"></i> $ 1000
+              Balance <i className="bi bi-chevron-right"></i> $ 1000
             </label>
           </div>
           <div className="form-check form-check-inline">
@@ -92,7 +92,7 @@ const P2pTradePreference = () => {
               value="option3"
             />
             <label className="form-check-label" for="inlineCheckbox3">
-              Balance <i class="bi bi-chevron-right"></i> $ 10000
+              Balance <i className="bi bi-chevron-right"></i> $ 10000
             </label>
           </div>
         </div>
@@ -105,8 +105,8 @@ const P2pTradePreference = () => {
               value="option1"
             />
             <label className="form-check-label" for="inlineCheckbox1">
-              Feedback <i class="bi bi-chevron-right"></i>
-              <i class="bi bi-hand-thumbs-up"></i> 50%
+              Feedback <i className="bi bi-chevron-right"></i>
+              <i className="bi bi-hand-thumbs-up"></i> 50%
             </label>
           </div>
           <div className="form-check form-check-inline">
@@ -117,8 +117,8 @@ const P2pTradePreference = () => {
               value="option2"
             />
             <label className="form-check-label" for="inlineCheckbox2">
-              Feedback <i class="bi bi-chevron-right"></i>
-              <i class="bi bi-hand-thumbs-up"></i> 70%
+              Feedback <i className="bi bi-chevron-right"></i>
+              <i className="bi bi-hand-thumbs-up"></i> 70%
             </label>
           </div>
           <div className="form-check form-check-inline">
@@ -129,8 +129,8 @@ const P2pTradePreference = () => {
               value="option3"
             />
             <label className="form-check-label" for="inlineCheckbox3">
-              Feedback <i class="bi bi-chevron-right"></i>
-              <i class="bi bi-hand-thumbs-up"></i> 90%
+              Feedback <i className="bi bi-chevron-right"></i>
+              <i className="bi bi-hand-thumbs-up"></i> 90%
             </label>
           </div>
         </div>

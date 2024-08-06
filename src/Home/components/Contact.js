@@ -12,8 +12,8 @@ import styles from "./Contact.module.css"; // Custom CSS for additional styling
 const Contact = () => {
   return (
     <div className={styles.contact_container}>
-      <div class="row px-5 py-5">
-        <div class="col-lg-4 col-sm-12 col-xs-12 py-3">
+      <div className="row px-5 py-5">
+        <div className="col-lg-4 col-sm-12 col-xs-12 py-3">
           <div className={styles.contact_header}>
             <img
               src={logo}
@@ -26,7 +26,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="col-lg-8 col-sm-12 col-xs-12">
+        <div className="col-lg-8 col-sm-12 col-xs-12">
           <div className={styles.contact_info}>
             <div className={styles.contact_email}>
               <a href="mailto:info@prizmxchange.com">info@prizmxchange.com</a>

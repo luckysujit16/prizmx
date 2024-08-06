@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineSwap } from "react-icons/ai";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import imgLogo from "../../../Home/assets/img/logo/dark-logo.png";
@@ -49,16 +49,20 @@ const DashNav = () => {
           </form>
         </div>
         <div className={newStyles.menuSection}>
-          <div className={styles.menuButton}>
-            <MdKeyboardDoubleArrowDown />
-          </div>
-          <p className={newStyles.fontSmall}>Deposit Crypto</p>
+          <Link to="/user/transactions">
+            <div className={styles.menuButton}>           
+              <MdKeyboardDoubleArrowDown />           
+            </div>
+            <p className={newStyles.fontSmall}>Deposit Crypto</p>
+          </Link>
         </div>
         <div className={newStyles.menuSection}>
-          <div className={newStyles.menuButton}>
-            <AiOutlineSwap />
-          </div>
-          <p className={newStyles.fontSmall}>Swap Crypto</p>
+          <Link to="/user/transactions">
+            <div className={newStyles.menuButton}>           
+              <AiOutlineSwap />
+            </div>
+            <p className={newStyles.fontSmall}>Swap Crypto</p>
+          </Link>
         </div>
         <div className={newStyles.profileSection}>
           <DashDropDownMenu />

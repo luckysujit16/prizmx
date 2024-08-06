@@ -1,3 +1,139 @@
 .fullHeight {
   min-height: calc(100vh - 150px);
 }
+
+.wallet {
+  text-align: center;
+}
+
+.walletHeader {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  background-color: black;
+  color: #fff;
+  padding: 1rem;
+}
+
+.walletTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.walletBalanceAmount {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.walletBox {
+  box-shadow: 0px 4px 15px -3px #b0b0b0;
+  border-radius: 5px;
+  padding-top: 1rem;
+}
+
+.walletTableHeader {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.walletMenu {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+
+  color: #8a2be2;
+  text-align: center;
+}
+
+.walletIcons {
+  font-size: 2.25rem;
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: start;
+}
+
+.mediumBoldFont {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+
+.noDataImg {
+  width: 100%;
+  max-width: 450px;
+}
+
+.tableBody {
+  text-align: center;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  .walletMenu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .walletTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .walletTableHeader {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .walletMenu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .walletTitle {
+    font-size: 0.65rem;
+    font-weight: 600;
+  }
+
+  .walletTableHeader {
+    font-size: 0.65rem;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 412px) {
+  .walletMenu {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+  }
+
+  .walletTableHeader {
+    font-size: 0.65rem;
+    font-weight: 500;
+  }
+
+  .walletTitle {
+    font-size: 0.65rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 344px) {
+  .walletMenu {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+  }
+
+  .walletTitle {
+    font-size: 0.65rem;
+    font-weight: 600;
+  }
+
+  .walletTableHeader {
+    font-size: 0.65rem;
+    font-weight: 500;
+  }
+}

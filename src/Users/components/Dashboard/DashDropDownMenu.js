@@ -4,7 +4,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 
 const DashDropDownMenu = () => {
   return (
-    <div class="dropdown">
+    <div className="dropdown">
       <div
         id="dropdownMenuButton1"
         data-bs-toggle="dropdown"
@@ -13,9 +13,12 @@ const DashDropDownMenu = () => {
         <FaRegUserCircle />
       </div>
 
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li>
+          <Link to="/user/profile" className="dropdown-item">Profile</Link>
+        </li>
         <li>
-          <a class="dropdown-item">Logout</a>
+          <Link to="#" className="dropdown-item">Logout</Link>
         </li>
       </ul>
     </div>

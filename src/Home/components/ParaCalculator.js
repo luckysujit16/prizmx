@@ -11,7 +11,7 @@ const ParaCalculator = () => {
             <div className="col-lg-12 col-sm-12 col-xs-12">
               <div className="row">
                 <div className="col-1">
-                  <i class="bi bi-magic"></i>
+                  <i className="bi bi-magic"></i>
                 </div>
                 <div className="col-11">
                   <span className={styles.introtext}>PRIZMX TOOLS</span>

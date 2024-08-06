@@ -47,72 +47,72 @@ const PressNMedia = () => {
             className={styles.prevbtn}
           ></button>
           <div className={styles.Carousel}>
-            <div id="item-list" class={styles.itemList}>
+            <div id="item-list" className={styles.itemList}>
               {/* Items  */}
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={ad1}
                 alt="Media Articles"
               />
 
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={ad2}
                 alt="Media Articles"
               />
 
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={ad3}
                 alt="Media Articles"
               />
 
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={ad4}
                 alt="Media Articles"
               />
 
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={ad5}
                 alt="Media Articles"
               />
 
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={ad6}
                 alt="Media Articles"
               />
 
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={ad7}
                 alt="Media Articles"
               />
 
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={ad8}
                 alt="Media Articles"
               />
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={ad9}
                 alt="Media Articles"
               />
               <img
                 id="item"
-                class={styles.item}
+                className={styles.item}
                 src={adx}
                 alt="Media Articles"
               />

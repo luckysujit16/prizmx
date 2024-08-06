@@ -45,6 +45,7 @@ body {
 
 a {
   color: #7a00cc;
+  text-decoration: none;
 }
 
 .fullHeight {
@@ -87,7 +88,7 @@ a {
 }
 
 .form-check-label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 

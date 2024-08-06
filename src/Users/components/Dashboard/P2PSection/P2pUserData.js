@@ -22,8 +22,9 @@ const P2pUserData = () => {
             <div className={styles.rowTopPadding}>
               <div className={styles.p2pRowSixColumn}>
                 {" "}
-                Email <i class="bi bi-check"></i> Mobile{" "}
-                <i class="bi bi-check"></i> Bank <i class="bi bi-check"></i>
+                Email <i className="bi bi-check"></i> Mobile{" "}
+                <i className="bi bi-check"></i> Bank{" "}
+                <i className="bi bi-check"></i>
               </div>
             </div>
             <label className={styles.fontSmallBold}>Trade History</label>
@@ -50,12 +51,12 @@ const P2pUserData = () => {
                 <span className={styles.fontSmall}>$ 102050</span>
                 <span className={styles.fontSmallBold}>Positive Feedback</span>
                 <span>
-                  <i class="bi bi-hand-thumbs-up"></i> 20
+                  <i className="bi bi-hand-thumbs-up"></i> 20
                 </span>
                 <span className={styles.fontSmallBold}>Negative Feedback</span>
                 <span>
                   {" "}
-                  <i class="bi bi-hand-thumbs-down"></i> 2
+                  <i className="bi bi-hand-thumbs-down"></i> 2
                 </span>
               </div>
             </div>

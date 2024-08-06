@@ -18,7 +18,7 @@ const HowDoes = () => {
             <div className="col-lg-12 col-sm-12 col-xs-12">
               <div className="row">
                 <div className="col-1 fs-5">
-                  <i class="bi bi-magic"></i>
+                  <i className="bi bi-magic"></i>
                 </div>
                 <div className="col-11 fs-6 pt-1">
                   <span className={styles.introtext}>FEATURE</span>
@@ -38,11 +38,14 @@ const HowDoes = () => {
               </p>
             </div>
             <div className="row">
-              <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
+              <div
+                className="accordion accordion-flush"
+                id="accordionFlushExample"
+              >
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingOne">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseOne"
@@ -54,21 +57,21 @@ const HowDoes = () => {
                   </h2>
                   <div
                     id="flush-collapseOne"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingOne"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       We at PRIZMXCHANGE understand the technology and it's
                       potential hence we have developed exlusive market place
                       based on PRIZMX CRYPTO COIN.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingTwo">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingTwo">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseTwo"
@@ -80,11 +83,11 @@ const HowDoes = () => {
                   </h2>
                   <div
                     id="flush-collapseTwo"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       Our philosophy of Decentralized Crypto means a real value
                       of asset decided by it's real owner who hold them and sell
                       them at price he wants to sell at and not dependent on
@@ -94,10 +97,10 @@ const HowDoes = () => {
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingThree">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseThree"
@@ -109,11 +112,11 @@ const HowDoes = () => {
                   </h2>
                   <div
                     id="flush-collapseThree"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingThree"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       At PRIZMXCHANGE all holders of PRIZMX Coins bought from
                       PRIZMXCHANGE shall become bonafied owners of their own
                       real crypto asset PRIZM and they will have power of
@@ -123,10 +126,10 @@ const HowDoes = () => {
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFour">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingFour">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseFour"
@@ -138,11 +141,11 @@ const HowDoes = () => {
                   </h2>
                   <div
                     id="flush-collapseFour"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingFour"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       We identified that even though PRIZM is having extremly
                       rear feature of SELF PARAMINING without having to INVEST
                       in HARDWARE, ELECTRICITY, MANPOWER, or STAKE huge amount
@@ -156,10 +159,10 @@ const HowDoes = () => {
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFive">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingFive">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseFive"
@@ -171,11 +174,11 @@ const HowDoes = () => {
                   </h2>
                   <div
                     id="flush-collapseFive"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingFive"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                       Peer to Peer Trading based order book matching only when
                       Buyer & Seller price is Matched without any manupulating
                       Auto Market Maker Script, shall make sure that price of
