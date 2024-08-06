@@ -32,17 +32,18 @@ const Profile = () => {
     <>
       <DashNav />
       <AdCarousel />
-      <div className="container-fluid">
-        <div className="fullHeight">
+
+      <div className="fullHeight">
+        <div className="container-fluid">
           <div className={newStyles.row}>
             <UserPersonalData />
           </div>
-          <div className="container-fluid">
-            <div className={styles.paddingTopBottom}>
-              <div className={styles.userPrefDiv}>
-                <UserMenu setActiveTab={setActiveTab} />
-                {renderActiveComponent()}
-              </div>
+        </div>
+        <div className="container-fluid">
+          <div className={styles.paddingTopBottom}>
+            <div className={styles.userPrefDiv}>
+              <UserMenu setActiveTab={setActiveTab} />
+              {renderActiveComponent()}
             </div>
           </div>
         </div>
