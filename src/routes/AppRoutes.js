@@ -8,6 +8,7 @@ import Dashboard from "../Users/pages/Dashboard";
 import Wallet from "../Users/pages/Wallet";
 import Profile from "../Users/pages/Profile";
 import PrivateRoutes from "../routing/PrivateRoute";
+import EmailVerify from "../Frontend/pages/EmailVerify";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/emailverification",
+    element: <EmailVerify />,
   },
   {
     path: "/user",

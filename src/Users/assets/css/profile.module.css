@@ -8,25 +8,62 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 1rem;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 .profileRowFourColumn {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 1rem;
-  padding: 1.25rem;
+  padding: 1rem;
+}
+
+.rowTopBottomPadding {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .commDiv {
   font-size: 1rem;
 }
 
-.profileRowThreeColumn {
+.rowTwoColumn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.rowTwoColumnKYC {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.rowThreeColumn {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 1rem;
-  padding: 1.25rem;
+  padding: 1rem;
+}
+
+.rowThreeColumnKYC {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+
+.userImg {
+  text-align: center;
+}
+
+.userImg img {
+  width: 65px;
+}
+
+.textRegular {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 .helpPara {
@@ -81,6 +118,7 @@
 
 .userTitle {
   font-size: 0.9rem;
+  padding: 1rem;
 }
 
 .userPrefDiv {
@@ -88,6 +126,19 @@
   grid-template-columns: 20% 80% 1fr;
   box-shadow: 0px 4px 15px -3px #b0b0b0;
   border-radius: 5px;
+}
+
+.mediumBoldFont {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-wrap: wrap;
+}
+
+.mediumBoldFontCenter {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-wrap: wrap;
+  text-align: center;
 }
 
 .userInfoDiv {
@@ -98,9 +149,10 @@
 
 .LeftMenu {
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: auto;
   gap: 0.5rem;
   color: #fff;
+  padding: 10px;
 }
 
 .menuButton {
@@ -140,11 +192,18 @@
 
 .feedbackTitle {
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .paddingTopBottom {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.textRegularLeft {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-align: left;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -155,6 +214,10 @@
     text-wrap: wrap;
   }
 
+  .reThreeColumn {
+    padding: 1rem;
+  }
+
   .userPrefDiv {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -163,12 +226,26 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
+  .userTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1rem;
+  }
+
   .userLeftMenu {
     grid-template-columns: repeat(5, 1fr);
     gap: 0.5rem;
     font-size: 0.85m;
     font-weight: 500;
     text-wrap: wrap;
+  }
+
+  .mediumBoldFont {
+    font-size: 1rem;
+  }
+
+  .mediumBoldFontCenter {
+    font-size: 1rem;
   }
 
   .menuTitle {
@@ -181,8 +258,14 @@
 @media only screen and (max-width: 769px) {
   .profileRowThreeColumn {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 100%;
     gap: 1rem;
+  }
+
+  .userTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1rem;
   }
 
   .userPrefDiv {
@@ -204,18 +287,59 @@
 
   .menuTitle {
     font-size: 0.85rem;
-
     text-align: center;
+  }
+
+  .mediumBoldFont {
+    font-size: 0.85rem;
+  }
+
+  .mediumBoldFontCenter {
+    font-size: 0.85rem;
+  }
+
+  .feedbackTitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .rowThreeColumnKYC {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+  }
+
+  .rowTwoColumnKYC {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 412px) {
   .profileRowTwoColumn {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rowTwoColumn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rowTwoColumnKYC {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .userPrefDiv {
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
+    padding: 10px;
+  }
+
+  .userTitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 1rem;
   }
 
   .userLeftMenu {
@@ -229,6 +353,19 @@
     font-size: 0.85rem;
     text-align: center;
   }
+
+  .feedbackTitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .mediumBoldFont {
+    font-size: 0.85rem;
+  }
+
+  .mediumBoldFontCenter {
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 344px) {
@@ -241,7 +378,8 @@
   }
 
   .profileRowTwoColumn {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
   }
 
   .profileRowFourColumn {
@@ -256,6 +394,11 @@
     grid-template-rows: repeat(1, 1fr);
     gap: 0.5rem;
     font-size: 0.65m;
+    font-weight: 500;
+  }
+
+  .feedbackTitle {
+    font-size: 0.85rem;
     font-weight: 500;
   }
 }

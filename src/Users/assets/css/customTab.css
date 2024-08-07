@@ -21,9 +21,9 @@
 }
 
 .form-check-input {
-  border: var(--bs-border-width) solid #6e6e6e;
+  border: var(--bs-border-width) solid #cdcdcd;
 }
 
 .form-control {
-  border: var(--bs-border-width) solid #6e6e6e;
+  border: var(--bs-border-width) solid #cdcdcd;
 }
