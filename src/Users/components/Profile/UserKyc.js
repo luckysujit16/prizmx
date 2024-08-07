@@ -5,7 +5,7 @@ import {
   MdOutlineHelp,
   MdOutlineAlternateEmail,
   MdEmail,
-  MdWhatsapp,
+  MdSignpost,
 } from "react-icons/md";
 import { FaIdCard, FaSimCard } from "react-icons/fa6";
 
@@ -14,6 +14,23 @@ const UserKyc = () => {
     <div className={styles.userInfoDiv}>
       <div className={styles.commDiv}>
         <div className={styles.userTitle}>KYC</div>
+        <div className={styles.rowTwoColumnKYC}>
+          <div className="form-check-label text-center">
+            <MdSignpost className={styles.mediumBoldFontCenter} /> Address{" "}
+          </div>
+          <div className="form-check-label text-center">User Image</div>
+        </div>
+        <div className={styles.rowTopBottomPadding}>
+          <div className={styles.rowTwoColumnKYC}>
+            <div className={styles.textRegular}>
+              At. Post Tripui, Taluka : Koregaon, Dist, Satara, Maharashatra :
+              401105
+            </div>
+            <div className={styles.userImg}>
+              <img src={userImg} alt="user-photo" />
+            </div>
+          </div>
+        </div>
         <div className={styles.rowThreeColumnKYC}>
           <div className={styles.mediumBoldFontCenter}>
             <MdEmail />
@@ -53,21 +70,6 @@ const UserKyc = () => {
               <label class="form-check-label px-2" for="flexSwitchCheckDefault">
                 Aadhar Card # 1234 XXXX XXXX
               </label>
-            </div>
-          </div>
-        </div>
-        <div className={styles.rowTwoColumnKYC}>
-          <div className="form-check-label text-center"> Address </div>
-          <div className="form-check-label text-center">User Image</div>
-        </div>
-        <div className={styles.rowTopBottomPadding}>
-          <div className={styles.rowTwoColumnKYC}>
-            <div className={styles.textRegular}>
-              At. Post Tripui, Taluka : Koregaon, Dist, Satara, Maharashatra :
-              401105
-            </div>
-            <div className={styles.userImg}>
-              <img src={userImg} alt="user-photo" />
             </div>
           </div>
         </div>

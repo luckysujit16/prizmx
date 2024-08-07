@@ -1,12 +1,12 @@
 // src/Home/Login.js
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import imgLogo from "../../Home/assets/img/logo/dark-logo.png";
 import styles from "../assets/customCSS.module.css";
 import styles1 from "../../Users/assets/css/p2p.module.css";
-import { login } from '../../actions/auth';
+import { login } from "../../actions/auth";
 
 const Login = ({ login, isAuthenticated }) => {
   const newStyles = { ...styles, ...styles1 };
@@ -32,7 +32,7 @@ const Login = ({ login, isAuthenticated }) => {
             <img src={imgLogo} alt="Prizm Logo" className={newStyles.imgLogo} />
           </div>
           <div className={newStyles.menuSection}>
-            <Link to="/register" >
+            <Link to="/register">
               <button
                 name="Registration"
                 value="register"

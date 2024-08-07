@@ -154,6 +154,11 @@ button:hover {
   border: 1px solid;
 }
 
+.emailSuccessDiv {
+  margin: auto;
+  padding-top: 10%;
+}
+
 @media only screen and (max-width: 1024px) {
   .twoColumnRow {
     grid-template-columns: 70% 30%;

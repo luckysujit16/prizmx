@@ -200,6 +200,12 @@
   padding-bottom: 1rem;
 }
 
+.textRegularLeft {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-align: left;
+}
+
 @media only screen and (max-width: 1024px) {
   .profileRowThreeColumn {
     display: grid;
