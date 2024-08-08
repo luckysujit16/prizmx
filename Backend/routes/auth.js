@@ -159,7 +159,7 @@ router.post(
                 // Save OTP to the database for later verification (you might need a new column for this in your users table)
                 await pool.query('UPDATE pzmx_users SET email_verification_token = ? WHERE email = ?', [token, email]);
 
-                return res.status(400).json({ errors: [{ msg: 'Please verify your email address!' }] });
+                return res.json({ errors: [{ msg: 'Please verify your email address!' }] });
             }
 
             // Create the JWT payload

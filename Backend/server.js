@@ -55,6 +55,7 @@ app.get("/currencydata", (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 //Crypto Currency Data
 app.get("/currencies", (req, res) => {
   if (cryptoData) {
@@ -65,8 +66,12 @@ app.get("/currencies", (req, res) => {
 });
 
 // Auth Routes
+=======
+>>>>>>> e7938e7a37f1c344efd6932dd54f4ea07a35e6c4
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/kyc", require("./routes/kyc"));
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/gauth", require("./routes/gauth"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
