@@ -120,10 +120,17 @@
 
   .walletButton {
     max-width: fit-content;
+    font-size: 0.65rem;
+    padding: 0.5rem;
   }
 
   .walletTableHeader {
     font-size: 0.65rem;
+    font-weight: 500;
+  }
+
+  .textLeftAlign {
+    font-size: 0.75rem;
     font-weight: 500;
   }
 }
@@ -141,11 +148,18 @@
 
   .walletButton {
     max-width: fit-content;
+    font-size: 0.65rem;
+    padding: 0.5rem;
   }
 
   .walletTitle {
     font-size: 0.65rem;
     font-weight: 600;
+  }
+
+  .textLeftAlign {
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 }
 
@@ -158,6 +172,11 @@
   .walletTitle {
     font-size: 0.65rem;
     font-weight: 600;
+  }
+
+  .textLeftAlign {
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
   .walletButton {
