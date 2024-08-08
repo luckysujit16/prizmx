@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+.walletDiv {
+  padding: 1rem;
+}
+
 .walletHeader {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -28,21 +32,26 @@
 .walletBox {
   box-shadow: 0px 4px 15px -3px #b0b0b0;
   border-radius: 5px;
-  padding-top: 1rem;
+  padding: 1rem;
 }
 
 .walletTableHeader {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   padding: 0.5rem;
-  text-align: center;
+  text-align: left;
+}
+
+.walletButton {
+  background-color: #7a4eff;
+  max-width: 50%;
 }
 
 .walletMenu {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 1rem;
-
+  margin: 1rem;
   color: #8a2be2;
   text-align: center;
 }
@@ -61,6 +70,12 @@
   padding: 0.5rem;
 }
 
+.textLeftAlign {
+  text-align: left;
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+
 .noDataImg {
   width: 100%;
   max-width: 450px;
@@ -75,11 +90,16 @@
   .walletMenu {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
+    margin: 1rem;
   }
 
   .walletTitle {
     font-size: 0.75rem;
     font-weight: 600;
+  }
+
+  .walletButton {
+    max-width: fit-content;
   }
 
   .walletTableHeader {
@@ -96,6 +116,10 @@
   .walletTitle {
     font-size: 0.65rem;
     font-weight: 600;
+  }
+
+  .walletButton {
+    max-width: fit-content;
   }
 
   .walletTableHeader {
@@ -115,6 +139,10 @@
     font-weight: 500;
   }
 
+  .walletButton {
+    max-width: fit-content;
+  }
+
   .walletTitle {
     font-size: 0.65rem;
     font-weight: 600;
@@ -130,6 +158,10 @@
   .walletTitle {
     font-size: 0.65rem;
     font-weight: 600;
+  }
+
+  .walletButton {
+    max-width: fit-content;
   }
 
   .walletTableHeader {

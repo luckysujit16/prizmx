@@ -16,7 +16,7 @@ const EmailVerify = () => {
   };
   useEffect(() => {
     setShowConfetti(true);
-  });
+  }, []);
 
   return (
     <>

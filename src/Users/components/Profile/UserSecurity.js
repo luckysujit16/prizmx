@@ -1,12 +1,7 @@
 import React from "react";
 import styles from "../../assets/css/profile.module.css";
 import { SiGoogleauthenticator } from "react-icons/si";
-import {
-  MdOutlineHelp,
-  MdOutlineAlternateEmail,
-  MdSms,
-  MdWhatsapp,
-} from "react-icons/md";
+import { MdOutlineHelp, MdOutlineAlternateEmail, MdSms } from "react-icons/md";
 
 const UserSecurity = () => {
   return (

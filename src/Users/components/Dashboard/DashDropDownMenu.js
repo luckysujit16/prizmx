@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 
 const DashDropDownMenu = () => {
@@ -14,11 +14,15 @@ const DashDropDownMenu = () => {
       </div>
 
       <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li>
-          <Link to="/user/profile" className="dropdown-item">Profile</Link>
+        <li>
+          <Link to="/user/profile" className="dropdown-item">
+            Profile
+          </Link>
         </li>
         <li>
-          <Link to="#" className="dropdown-item">Logout</Link>
+          <Link to="#" className="dropdown-item">
+            Logout
+          </Link>
         </li>
       </ul>
     </div>

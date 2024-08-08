@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/img/logo/dark-logo.png"; // Adjust the path as necessary
 import {
   FaFacebookF,
@@ -29,49 +30,51 @@ const Contact = () => {
         <div className="col-lg-8 col-sm-12 col-xs-12">
           <div className={styles.contact_info}>
             <div className={styles.contact_email}>
-              <a href="mailto:info@prizmxchange.com">info@prizmxchange.com</a>
+              <Link to="mailto:info@prizmxchange.com">
+                info@prizmxchange.com
+              </Link>
             </div>
             <div className={styles.contact_hours}>
               Mon - Sat 9:00am - 6:00pm / Sunday - CLOSED
             </div>
           </div>
           <div className={styles.contact_social}>
-            <a href="#" className={styles.social_icon}>
+            <Link to="#" className={styles.social_icon}>
               <FaFacebookF />
-            </a>
-            <a href="#" className={styles.social_icon}>
+            </Link>
+            <Link to="#" className={styles.social_icon}>
               <FaInstagram />
-            </a>
-            <a href="#" className={styles.social_icon}>
+            </Link>
+            <Link to="#" className={styles.social_icon}>
               <FaLinkedinIn />
-            </a>
-            <a href="#" className={styles.social_icon}>
+            </Link>
+            <Link to="#" className={styles.social_icon}>
               <FaTelegramPlane />
-            </a>
+            </Link>
           </div>
 
           <nav className={styles.contact_nav}>
-            <a href="#" className={styles.nav_link}>
+            <Link to="#" className={styles.nav_link}>
               Features
-            </a>
-            <a href="#" className={styles.nav_link}>
+            </Link>
+            <Link to="#" className={styles.nav_link}>
               Future
-            </a>
-            <a href="#" className={styles.nav_link}>
+            </Link>
+            <Link to="#" className={styles.nav_link}>
               Paramining
-            </a>
-            <a href="#" className={styles.nav_link}>
+            </Link>
+            <Link to="#" className={styles.nav_link}>
               Paramining Factor
-            </a>
-            <a href="#" className={styles.nav_link}>
+            </Link>
+            <Link to="#" className={styles.nav_link}>
               Register
-            </a>
-            <a href="#" className={styles.nav_link}>
+            </Link>
+            <Link to="#" className={styles.nav_link}>
               WhitePaper
-            </a>
-            <a href="#" className={styles.nav_link}>
+            </Link>
+            <Link to="#" className={styles.nav_link}>
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

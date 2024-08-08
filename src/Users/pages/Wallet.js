@@ -7,7 +7,6 @@ import DepositWithdrwalTab from "../components/Wallet/DepositWithdrwalTab";
 import WalletMenuSection from "../components/Wallet/WalletMenuSection";
 import CryptoDeposit from "../components/Wallet/CryptoDeposit";
 import CryptoWithdrawal from "../components/Wallet/CryptoWithdrawal";
-import CombinedReport from "../components/Wallet/CombinedReport";
 import SwapCrypto from "../components/Wallet/SwapCrypto";
 
 const Wallet = () => {

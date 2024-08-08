@@ -184,5 +184,52 @@
         "flagUrl": "https://flagcdn.com/us.svg"
       }
     }
+  ],
+  "currencies": [
+    {
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+      "icon": "https://s2.coinmarketcap.com/static/img/coins/32x32/1.png",
+      "currency_type": "crypto",
+      "blockchain_type": "BTC",
+      "blockchain_api_url": "https://api.blockcypher.com/v1/btc/main"
+    },
+    {
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+      "icon": "https://s2.coinmarketcap.com/static/img/coins/32x32/1027.png",
+      "currency_type": "crypto",
+      "blockchain_type": "ETH",
+      "blockchain_api_url": "https://api.etherscan.io/api"
+    },
+    {
+      "name": "Tether",
+      "symbol": "USDT",
+      "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+      "icon": "https://s2.coinmarketcap.com/static/img/coins/32x32/825.png",
+      "currency_type": "token",
+      "blockchain_type": "ERC-20",
+      "blockchain_api_url": "https://api.etherscan.io/api"
+    },
+    {
+      "name": "Binance USD",
+      "symbol": "BUSD",
+      "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4687.png",
+      "icon": "https://s2.coinmarketcap.com/static/img/coins/32x32/4687.png",
+      "currency_type": "token",
+      "blockchain_type": "ERC-20",
+      "blockchain_api_url": "https://api.etherscan.io/api"
+    },
+    {
+      "name": "TrueUSD",
+      "symbol": "TUSD",
+      "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2563.png",
+      "icon": "https://s2.coinmarketcap.com/static/img/coins/32x32/2563.png",
+      "currency_type": "token",
+      "blockchain_type": "ERC-20",
+      "blockchain_api_url": "https://api.etherscan.io/api"
+    }
   ]
 }

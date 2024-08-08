@@ -24,6 +24,7 @@ const orderData = readJsonFile("./data/dashboardData.json").buyOrders;
 const currencyData = readJsonFile(
   "./data/dashboardData.json"
 ).countrywisecurrencydata;
+const cryptoData = readJsonFile("./data/dashboardData.json").currencies;
 // Init Middleware
 app.use(express.json());
 
@@ -45,12 +46,21 @@ app.get("/orderdata", (req, res) => {
   }
 });
 
-//Currency Data
+//Fiat Currency Data
 app.get("/currencydata", (req, res) => {
   if (currencyData) {
     res.status(200).json(currencyData);
   } else {
     res.status(404).json({ currencyData: [] });
+  }
+});
+
+//Crypto Currency Data
+app.get("/currencies", (req, res) => {
+  if (cryptoData) {
+    res.status(200).json(cryptoData);
+  } else {
+    res.status(404).json({ cryptoData: [] });
   }
 });
 

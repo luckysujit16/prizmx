@@ -1,12 +1,7 @@
 import React from "react";
 import styles from "../../assets/css/profile.module.css";
 import userImg from "../../assets/img/icons/profile-icon.png";
-import {
-  MdOutlineHelp,
-  MdOutlineAlternateEmail,
-  MdEmail,
-  MdSignpost,
-} from "react-icons/md";
+import { MdOutlineHelp, MdEmail, MdSignpost } from "react-icons/md";
 import { FaIdCard, FaSimCard } from "react-icons/fa6";
 
 const UserKyc = () => {
