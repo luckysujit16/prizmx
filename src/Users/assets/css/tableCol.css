@@ -36,14 +36,6 @@ th {
     visibility: collapse;
   }
 
-  td.walletCol6 {
-    display: none;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    visibility: collapse;
-  }
-
   td.walletCol8 {
     display: none;
     width: 0;
@@ -77,14 +69,6 @@ th {
   }
 
   th.tableH5 {
-    display: none;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    visibility: collapse;
-  }
-
-  th.tableH6 {
     display: none;
     width: 0;
     height: 0;
@@ -132,14 +116,6 @@ th {
     visibility: collapse;
   }
 
-  td.walletCol6 {
-    display: none;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    visibility: collapse;
-  }
-
   td.walletCol8 {
     display: none;
     width: 0;
@@ -173,14 +149,6 @@ th {
   }
 
   th.tableH5 {
-    display: none;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    visibility: collapse;
-  }
-
-  th.tableH6 {
     display: none;
     width: 0;
     height: 0;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import styles from "../../assets/css/dashboard.module.css";
 
@@ -41,18 +42,21 @@ const DashData = () => {
           <div className={styles.dashboardData}>
             {dashboardData.map((data, index) => (
               <figure key={data.id}>
-                <img
-                  src={
-                    images[data.image.replace("../../assets/img/icons/", "")]
-                  }
-                  alt={data.name}
-                  id="icon"
-                  onError={(e) => {
-                    e.target.src = "../../assets/img/icons/small_logo.ico";
-                  }} // Fallback image
-                />
-                <p className={styles.dashboardTitle}>{data.name}</p>
-                <figcaption>{data.data}</figcaption>
+                <Link to="/user/paramining">
+                  <img
+                    src={
+                      images[data.image.replace("../../assets/img/icons/", "")]
+                    }
+                    alt={data.name}
+                    id="icon"
+                    onError={(e) => {
+                      e.target.src = "../../assets/img/icons/small_logo.ico";
+                    }} // Fallback image
+                  />
+
+                  <p className={styles.dashboardTitle}>{data.name}</p>
+                  <figcaption>{data.data}</figcaption>
+                </Link>
               </figure>
             ))}
           </div>

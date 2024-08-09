@@ -9,6 +9,7 @@ import Wallet from "../Users/pages/Wallet";
 import Profile from "../Users/pages/Profile";
 import PrivateRoutes from "../routing/PrivateRoute";
 import EmailVerify from "../Frontend/pages/EmailVerify";
+import Paramining from "../Users/pages/Paramining";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "paramining",
+        element: <Paramining />,
       },
     ],
   },

@@ -1,0 +1,87 @@
+.paraHeader {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.paraDataTwoColumn {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  column-gap: 1rem;
+}
+
+.paraDataDiv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-rows: repeat(4, 1fr); */
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 0px #dddddd;
+  border-radius: 8px;
+}
+
+.paratwoRows {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.paraTwoColumn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.paraDataIcon {
+  font-size: 2.25rem;
+  color: #7a00cc;
+}
+
+.paraData {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.paraDataSmallScreen {
+  display: none;
+}
+
+.paraNumber {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.paraActionDiv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1rem;
+  box-shadow: 0px 0px 10px 0px #dddddd;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .paraDataTwoColumn {
+    display: grid;
+    grid-template-columns: auto;
+    column-gap: 1rem;
+  }
+
+  .paraDataDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .paratwoRows {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+  }
+
+  .paraDataSmallScreen {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}

@@ -5,29 +5,23 @@ const BalanceData = () => {
   return (
     <div className={styles.wallet}>
       <div className={styles.walletHeader}>
+        <div className={styles.walletTitle}>Total Balance</div>
+        <div className={styles.walletTitle}>BTC Value Of Total Balance</div>
         <div className={styles.walletTitle}>
-          Total Balance :{" "}
-          <span className={styles.walletBalanceAmount}>
-            <i className="bi bi-currency-dollar"></i> 56475
-          </span>
+          Balance Value In Local Currency
         </div>
-        <div className={styles.walletTitle}>
-          BTC Value Of Total Balance :{" "}
-          <span className={styles.walletBalanceAmount}>
-            <i className="bi bi-currency-bitcoin"></i> 0.85
-          </span>
+        <div className={styles.walletTitle}>Total Balance Value In PrizmX</div>
+        <div className={styles.walletBalanceAmount}>
+          <i className="bi bi-currency-dollar"></i> 56475
         </div>
-        <div className={styles.walletTitle}>
-          Total Balance Value In Local Currency :{" "}
-          <span className={styles.walletBalanceAmount}>
-            <i className="bi bi-currency-rupee"></i> 4687425
-          </span>
+        <div className={styles.walletBalanceAmount}>
+          <i className="bi bi-currency-bitcoin"></i> 0.85
         </div>
-        <div className={styles.walletTitle}>
-          Total Balance Value In PrizmX :{" "}
-          <span className={styles.walletBalanceAmount}>
-            <i className="bi bi-currency-rupee"></i> 56475
-          </span>
+        <div className={styles.walletBalanceAmount}>
+          <i className="bi bi-currency-rupee"></i> 4687425
+        </div>
+        <div className={styles.walletBalanceAmount}>
+          <i className="bi bi-currency-rupee"></i> 56475
         </div>
       </div>
     </div>
