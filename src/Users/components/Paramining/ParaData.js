@@ -19,7 +19,7 @@ const ParaData = () => {
           <div className={styles.paraNumber}>14235</div>
         </div>
         <div className={styles.paraDataDiv}>
-          <div>
+          <div className={styles.paraIconDiv}>
             <div className={styles.paraDataIcon}>
               <MdOutlineAccountBalanceWallet />
               <div className={styles.paraData}>PZMX Balance</div>
